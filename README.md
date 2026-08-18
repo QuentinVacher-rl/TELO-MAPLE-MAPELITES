@@ -107,9 +107,9 @@ The configuration is already set to make it easy to reproduce the results from t
 * The **descriptor type** indicates the descriptor to use. If none is set, tournament selection is used.
 * In `params_0.json`, `nbThreads` can be set to configure custom parallelization. By default, 16 threads are used.
 
-The log results may differ slightly from the results reported in the article because they do not appear to be fully portable.
+The logged results may differ slightly from those reported in the article, as the results do not appear to be fully portable across different operating systems.
+The results are deterministic when executed on the same operating system, but may vary across different operating systems. Gegelati is tested for full portable determinism. However, the MuJoCo documentation states that “Exact reproducibility is only guaranteed within a single version, on the same architecture” (see [mujoco](https://github.com/google-deepmind/mujoco/blob/main/doc/computation/index.rst)).
 
-The results are deterministic when launched on the same operating system, but they appear to differ across operating systems. Gegelati is tested for full coverage, so we assume that the differences come from the MuJoCo library or from a bug in the source code.
 
 ## Testing the article results
 
