@@ -178,6 +178,23 @@ void saveFrame(int width, int height, const char* filename) {
     free(pixels);
 }
 
+void printUsage(const char* programName) {
+    std::cout
+        << "Usage: " << programName << " [options]\n\n"
+        << "Options:\n"
+        << "  -d <dotFile>              Dot file of the individual tested\n"
+        << "  -s <seed>                 Random seed (default: 0)\n"
+        << "  -p <jsonFile>             Parameter file (default: params_0.json)\n"
+        << "  -u <useCase>              MuJoCo use case (default: 'hopper')\n"
+        << "  -x <xmlFile>              MuJoCo XML file (default: 'mujoco_models/<usecase>.xml'\n"
+        << "  -v <speedRender>          Type of render: 0-default speed, 1-fast speed, 2-no visual(so super fast!) (default: 0)\n"
+        << "  -z <cameraFixed>          Camera is fixed on the agent by default (default: true)\n"
+        << "  -f <pathVideo>            Save the render video if a folder path is given (default: '')\n"
+        << "  -c <genCode>              Generate C code of the individual, used notably for interpretability (default: 'false')\n"
+        << "  -d <printData>            Generate a csv file of the action/states values of the episode (default: 'false')\n"
+        << "  -h                        Display this help message\n";
+}
+
 int main(int argc, char ** argv) {
     
     char option;
@@ -188,32 +205,33 @@ int main(int argc, char ** argv) {
 	char xmlFile[150];
 	char usecase[150];
     uint64_t seed=0;
-	bool useHealthyReward = 1;
 	size_t fastVisu = 0;
     bool fixed = 1;
-    bool saveClearedGraph = 0;
     bool saveCodeGen = 0;
+    bool printData = 0;
 
-    strcpy(dotPath, "logs/out_best.0.p0.dot");
+    strcpy(dotPath, "");
     strcpy(paramFile, "params_0.json");
-    strcpy(pathRenderVideo, "../logs/render");
-	strcpy(usecase, "ant");
+    strcpy(pathRenderVideo, "");
+	strcpy(usecase, "hopper");
     strcpy(xmlFile, "none");
-    while((option = getopt(argc, argv, "s:p:d:f:g:x:h:c:u:v:z:y:")) != -1){
+    while((option = getopt(argc, argv, "d:s:p:u:x:v:z:f:c:e:h:")) != -1){
         switch (option) {
+            case 'd': strcpy(dotPath, optarg); break;
             case 's': seed= atoi(optarg); break;
             case 'p': strcpy(paramFile, optarg); break;
-            case 'd': strcpy(dotPath, optarg); break;
-            case 'g': strcpy(pathRenderVideo, optarg); break;
-            case 'f': isRenderVideoSaved= atoi(optarg); break;
 			case 'u': strcpy(usecase, optarg); break;
-			case 'h': useHealthyReward = atoi(optarg); break;
-			case 'c': saveCodeGen = atoi(optarg); break;
-			case 'v': fastVisu = atoi(optarg); break;
             case 'x': strcpy(xmlFile, optarg); break;
+			case 'v': fastVisu = atoi(optarg); break;
             case 'z': fixed = atoi(optarg); break;
-            case 'y': saveClearedGraph = atoi(optarg); break;
-            default: std::cout << "Unrecognised option. Valid options are \'-s seed\' \'-p paramFile.json\' \'-u useCase\' \'-d dot path\' \'-f save or not video\' \'-g path for video saved\' \'-x xmlFile\' \'-h useHealthyReward\' \'-c useContactForce\' \'-v fastVisu\' \'-c Save codeGen\'." << std::endl; exit(1);
+            case 'f': strcpy(pathRenderVideo, optarg); break;
+			case 'c': saveCodeGen = atoi(optarg); break;
+			case 'e': printData = atoi(optarg); break;
+			case 'h': printUsage(argv[0]); return 0;
+            default: 
+                std::cerr << "Error: invalid command-line option.\n\n";
+                printUsage(argv[0]);
+                exit(1);
         }
     }
     if(strcmp(xmlFile, "none") == 0){
@@ -239,19 +257,19 @@ int main(int argc, char ** argv) {
 	// Instantiate the LearningEnvironment
 	MujocoWrapper* mujocoLE = nullptr;
 	if(strcmp(usecase, "humanoid") == 0){
-		mujocoLE = new MujocoHumanoidWrapper(xmlFile, useHealthyReward);
+		mujocoLE = new MujocoHumanoidWrapper(xmlFile);
 	} else if (strcmp(usecase, "half_cheetah") == 0) {
 		mujocoLE = new MujocoHalfCheetahWrapper(xmlFile);
 	} else if (strcmp(usecase, "hopper") == 0) {
-		mujocoLE = new MujocoHopperWrapper(xmlFile, useHealthyReward);
+		mujocoLE = new MujocoHopperWrapper(xmlFile);
 	} else if (strcmp(usecase, "walker2d") == 0) {
-		mujocoLE = new MujocoWalker2DWrapper(xmlFile, useHealthyReward);
+		mujocoLE = new MujocoWalker2DWrapper(xmlFile);
 	} else if (strcmp(usecase, "reacher") == 0) {
 		mujocoLE = new MujocoReacherWrapper(xmlFile);
 	} else if (strcmp(usecase, "inverted_double_pendulum") == 0) {
 		mujocoLE = new MujocoDoublePendulumWrapper(xmlFile);
 	} else if (strcmp(usecase, "ant") == 0) {
-		mujocoLE = new MujocoAntWrapper(xmlFile, useHealthyReward);
+		mujocoLE = new MujocoAntWrapper(xmlFile);
 	} else {
 		throw std::runtime_error("Use case not found");
 	}
@@ -289,16 +307,6 @@ int main(int argc, char ** argv) {
 
     }
 
-    if(saveClearedGraph){
-        tpg.clearProgramIntrons();
-        char clearDot[250];
-        // Export the graph    
-        strncpy(clearDot, dotPath, strstr(dotPath, ".dot") - dotPath);
-        strcat(clearDot, ".clear.dot");
-        File::TPGGraphDotExporter dotExporter(clearDot, *la.getTPGGraph());
-        dotExporter.print();
-        std::cout<<"Save cleared root in "<<clearDot<<" --- ";
-    }
     // Print graph
     if(saveCodeGen){
         std::string codeGenPath = dotDir + "/codeGen/";
@@ -317,6 +325,10 @@ int main(int argc, char ** argv) {
     std::cout<<mujocoLE->m_->opt.timestep<<" "<<mujocoLE->frame_skip_<<std::endl;
     double frameDuration = mujocoLE->m_->opt.timestep * mujocoLE->frame_skip_; // en secondes
     int frameDelayMs = static_cast<int>(frameDuration * 1000); // en millisecondes
+
+    if(!(strcmp(pathRenderVideo, "") == 0)) {
+        isRenderVideoSaved = true;
+    }
 
     if(fastVisu != 2){
         InitVisualization(mujocoLE->m_, mujocoLE->d_, fixed);
@@ -352,9 +364,10 @@ int main(int argc, char ** argv) {
 
     }
 
-    
-	std::string actionAndStateData = dotDir + "/stateAndActionData" + dotFileName + ".csv";
-    mujocoLE->printStateAndAction(actionAndStateData);
+    if(printData) {
+        std::string actionAndStateData = dotDir + "/stateAndActionData" + dotFileName + ".csv";
+        mujocoLE->printStateAndAction(actionAndStateData);
+    }
 
 
 
