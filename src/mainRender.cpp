@@ -271,7 +271,7 @@ int main(int argc, char ** argv) {
 	} else if (strcmp(usecase, "ant") == 0) {
 		mujocoLE = new MujocoAntWrapper(xmlFile);
 	} else {
-		throw std::runtime_error("Use case not found");
+		throw std::runtime_error("Use case not found, available are 'humanoid','half_cheetah','hopper','walker2d','inverted_double_pendulum','reacher','ant'");
 	}
 
 	// Instantiate and init the learning agent

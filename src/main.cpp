@@ -24,7 +24,7 @@ void printUsage(const char* programName) {
         << "  -u <useCase>              MuJoCo use case (default: 'hopper')\n"
         << "  -x <xmlFile>              MuJoCo XML file (default: 'mujoco_models/<usecase>.xml'\n"
         << "  -g <saveAllGenDotFiles>   Save all generation DOT files, can be expensive for memory on long trainings (default: true)\n"
-        << "  -d <descriptorTypeStr>    Descriptor types: 'ActionValues', 'NbInstr', 'FeetContact'. Multiple can be done if seperated by comme like 'ActionValues,NbInstr'\n"
+        << "  -d <descriptorTypeStr>    Descriptor types: 'ActionValues', 'NbInstr', 'FeetContact' (default: '', is tournament selection).\nMultiple can be used if seperated by comme like 'ActionValues,NbInstr'\n"
         << "  -r <reproduceResults>     Reproduce TELO results (default: true)\n"
         << "  --cvt <useCVT>            Use CVT Map-Elites (default: true)\n"
         << "  --scvt <sizeCVT>          CVT archive size (default: 1000)\n"
@@ -113,7 +113,7 @@ void initializeArchiveParams(std::vector<std::string>& archiveDots,
 		} else if (token == "NbInstr"){
         	descriptors.push_back(std::make_shared<Selector::MapElites::CustomDescriptors::NbInstr>());
 		} else {
-			throw std::runtime_error("Descriptor type not found");
+			throw std::runtime_error("Descriptor type not found, available are 'ActionValues', 'FeetContact', 'NbInstr'");
 		}
 
         std::string dotPath  = logsFolder + "/archiveDots_"  + token;
@@ -147,7 +147,7 @@ int main(int argc, char ** argv) {
 	bool reproducingTeloResults = true;
 
 	std::string archiveValuesStr = "";
-	std::string descriptorTypeStr = "";
+	std::string descriptorTypeStr = "None";
 	size_t sizeCVT = 1000;
 
 	static struct option long_options[] = {
@@ -233,7 +233,7 @@ int main(int argc, char ** argv) {
 	File::ParametersParser::loadParametersFromJson(paramFile, params);
 
 	if(reproducingTeloResults) {
-		if(descriptorTypeStr != "") {
+		if(descriptorTypeStr != "" && descriptorTypeStr != "None") {
 			params.selection._selectionMode = "mapElites";
 		}
 		if((strcmp(usecase, "hopper") == 0)) {
@@ -282,7 +282,7 @@ int main(int argc, char ** argv) {
 	} else if (strcmp(usecase, "ant") == 0) {
 		mujocoLE = new MujocoAntWrapper(xmlFile);
 	} else {
-		throw std::runtime_error("Use case not found");
+		throw std::runtime_error("Use case not found, available are 'humanoid','half_cheetah','hopper','walker2d','inverted_double_pendulum','reacher','ant'");
 	}
 
 	
