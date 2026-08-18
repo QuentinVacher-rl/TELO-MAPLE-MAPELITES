@@ -14,6 +14,24 @@
 #include "instructions.h"
 #include "descriptors.h"
 
+void printUsage(const char* programName) {
+    std::cout
+        << "Usage: " << programName << " [options]\n\n"
+        << "Options:\n"
+        << "  -s <seed>                 Random seed (default: 0)\n"
+        << "  -p <jsonFile>             Parameter file (default: params_0.json)\n"
+        << "  -l <folder>               Logs folder (default: logs)\n"
+        << "  -u <useCase>              MuJoCo use case (default: 'hopper')\n"
+        << "  -x <xmlFile>              MuJoCo XML file (default: 'mujoco_models/<usecase>.xml'\n"
+        << "  -g <saveAllGenDotFiles>   Save all generation DOT files, can be expensive for memory on long trainings (default: true)\n"
+        << "  -d <descriptorTypeStr>    Descriptor types: 'ActionValues', 'NbInstr', 'FeetContact'. Multiple can be done if seperated by comme like 'ActionValues,NbInstr'\n"
+        << "  -r <reproduceResults>     Reproduce TELO results (default: true)\n"
+        << "  --cvt <useCVT>            Use CVT Map-Elites (default: true)\n"
+        << "  --scvt <sizeCVT>          CVT archive size (default: 1000)\n"
+        << "  -a <archiveValues>        Archive values if not using CVT\n"
+        << "  -h, --help                Display this help message\n";
+}
+
 void exportIndividual(const TPG::TPGVertex* vertex,
                       const std::string& basePathDots,
                       const std::string& basePathStats,
@@ -124,9 +142,9 @@ int main(int argc, char ** argv) {
 	char logsFolder[150];
 	char xmlFile[150];
 	char usecase[150];
-	bool useHealthyReward = 1;
-	bool saveAllGenerationsDots = 1;
-	bool useCVT = 0;
+	bool saveAllGenerationsDots = true;
+	bool useCVT = true;
+	bool reproducingTeloResults = true;
 
 	std::string archiveValuesStr = "";
 	std::string descriptorTypeStr = "";
@@ -135,35 +153,34 @@ int main(int argc, char ** argv) {
 	static struct option long_options[] = {
 		{"cvt",      required_argument, 0,  6 },
 		{"scvt",      required_argument, 0,  7 },
+		{"help",      required_argument, 0,  8 },
 		{0, 0, 0, 0}
 	};
 
     strcpy(logsFolder, "logs");
-    strcpy(paramFile, "params_default.json");
-	strcpy(paramFile, "params_mapElites.json");
-	strcpy(usecase, "ant");
+	strcpy(paramFile, "params_0.json");
+	strcpy(usecase, "hopper");
     strcpy(xmlFile, "none");
 	int long_index = 0;
-	while((option = getopt_long(argc, argv, "s:p:l:x:h:c:u:a:g:o:d:", long_options, &long_index)) != -1){
+	while((option = getopt_long(argc, argv, "s:p:l:u:x:a:g:d:r:h:", long_options, &long_index)) != -1){
 		switch (option) {
 			case 's': seed= atoi(optarg); break;
 			case 'p': strcpy(paramFile, optarg); break;
 			case 'l': strcpy(logsFolder, optarg); break;
 			case 'u': strcpy(usecase, optarg); break;
-			case 'h': useHealthyReward = atoi(optarg); break;
 			case 'x': strcpy(xmlFile, optarg); break;
 			case 'a': archiveValuesStr = optarg; break;
 			case 'g': saveAllGenerationsDots = atoi(optarg); break;
 			case 'd': descriptorTypeStr = optarg; break;
+			case 'r': reproducingTeloResults = optarg; break;
+			case 'h': printUsage(argv[0]); return 0;
 			case 6: useCVT = atoi(optarg); break;                 // --cvt
 			case 7: sizeCVT = atoi(optarg); break;                // --scvt
+			case 8: printUsage(argv[0]); return 0;                // --scvt
 			default:
-				std::cout << "Unrecognised option. Valid options are "
-					"'-s seed'\n '-p paramFile.json'\n '-u useCase'\n "
-					"'-l logsFolder'\n '-x xmlFile'\n '-h useHealthyReward'\n "
-					"'-a sizeArchive'\n '-g saveAllGenDotFiles'\n "
-					"'-d descriptorTypeStr'\n "
-					"'--dMinMax useMinMaxDescriptor'\n '--cvt useCVT'\n '--scvt sizeCVT'\n."  << std::endl;
+                std::cerr
+                    << "Error: invalid command-line option.\n\n";
+				printUsage(argv[0]);
 				exit(1);
 		}
 	}
@@ -200,7 +217,7 @@ int main(int argc, char ** argv) {
 	if (std::regex_search(paramFileStr, match, re)) {
 		indexParam = std::stoi(match[1]);
 	} else {
-		throw std::runtime_error("error detection of index");
+		indexParam = 0;
 	}
 
 
@@ -215,6 +232,28 @@ int main(int argc, char ** argv) {
 	Learn::LearningParameters params;
 	File::ParametersParser::loadParametersFromJson(paramFile, params);
 
+	if(reproducingTeloResults) {
+		if(descriptorTypeStr != "") {
+			params.selection._selectionMode = "mapElites";
+		}
+		if((strcmp(usecase, "hopper") == 0)) {
+			params.mutation.tpg.nbActionEdgeInit = 3;
+			params.nbGenerations = 2000;
+			params.stepValidation = 50;
+		} else if (strcmp(usecase, "half_cheetah") == 0 || strcmp(usecase, "walker2d") == 0) {
+			params.mutation.tpg.nbActionEdgeInit = 6;
+			params.nbGenerations = 2000;
+			params.stepValidation = 50;
+		} else if (strcmp(usecase, "ant") == 0) {
+			params.mutation.tpg.nbActionEdgeInit = 8;
+			params.nbGenerations = 5000;
+			params.stepValidation = 100;
+		} else if (strcmp(usecase, "humanoid") == 0) {
+			params.mutation.tpg.nbActionEdgeInit = 17;
+			params.nbGenerations = 10000;
+			params.stepValidation = 200;
+		}
+	}
 
 	// Export parameters before starting training.
 	// These may differ from imported parameters because of LE or machine specific
@@ -222,25 +261,26 @@ int main(int argc, char ** argv) {
 	char jsonFilePath[200];  // Assurez-vous que ce soit assez grand pour contenir les deux parties concaténées.
 	snprintf(jsonFilePath, sizeof(jsonFilePath), "%s/exported_params.%s.p%d.json", logsFolder, usecase, indexParam);
 	File::ParametersParser::writeParametersToJson(jsonFilePath, params);
-	
+
+
 
 
 	// Instantiate the LearningEnvironment
 	MujocoWrapper* mujocoLE = nullptr;
 	if(strcmp(usecase, "humanoid") == 0){
-		mujocoLE = new MujocoHumanoidWrapper(xmlFile, useHealthyReward);
+		mujocoLE = new MujocoHumanoidWrapper(xmlFile);
 	} else if (strcmp(usecase, "half_cheetah") == 0) {
 		mujocoLE = new MujocoHalfCheetahWrapper(xmlFile);
 	} else if (strcmp(usecase, "hopper") == 0) {
-		mujocoLE = new MujocoHopperWrapper(xmlFile, useHealthyReward);
+		mujocoLE = new MujocoHopperWrapper(xmlFile);
 	} else if (strcmp(usecase, "walker2d") == 0) {
-		mujocoLE = new MujocoWalker2DWrapper(xmlFile, useHealthyReward);
+		mujocoLE = new MujocoWalker2DWrapper(xmlFile);
 	} else if (strcmp(usecase, "inverted_double_pendulum") == 0) {
 		mujocoLE = new MujocoDoublePendulumWrapper(xmlFile);
 	} else if (strcmp(usecase, "reacher") == 0) {
 		mujocoLE = new MujocoReacherWrapper(xmlFile);
 	} else if (strcmp(usecase, "ant") == 0) {
-		mujocoLE = new MujocoAntWrapper(xmlFile, useHealthyReward);
+		mujocoLE = new MujocoAntWrapper(xmlFile);
 	} else {
 		throw std::runtime_error("Use case not found");
 	}
@@ -364,9 +404,6 @@ int main(int argc, char ** argv) {
 	std::ofstream stats;
 	stats.open(bestPolicyStatsPath);
 	Log::LAPolicyStatsLogger policyStatsLogger(la, stats);
-
-
-	File::ParametersParser::writeParametersToJson(jsonFilePath, params);
 
 
 

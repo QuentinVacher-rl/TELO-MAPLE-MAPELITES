@@ -15,12 +15,12 @@
 	// Maximum number of actions performed on the learning environment during the
 	// each evaluation of a root.
 	// "maxNbActionsPerEval" : 1000, // Default value
-	"maxNbActionsPerEval" : 30,
+	"maxNbActionsPerEval" : 1000,
 	// Maximum number of times a given root is evaluated.After this number is
 	// reached, possibly after several generations, the score of the root will be
 	// fixed, and no further evaluation will be done.
 	// "maxNbEvaluationPerPolicy" : 1000, // Default value
-	"maxNbEvaluationPerPolicy" : 3,
+	"maxNbEvaluationPerPolicy" : 20,
 	"mutation" : 
 	{
 		"prog" : 
@@ -79,10 +79,10 @@
 			"nbRoots" : 1000,
 			// Probability of adding an outgoing Action Edge to a Action.
 			// "pActionEdgeAddition" : 0.7, // Default value
-			"pActionEdgeAddition" : 0.2,
+			"pActionEdgeAddition" : 0.0,
 			// Probability of deleting an outgoing ActionEdge of a Action.
 			// "pActionEdgeDeletion" : 0.7, // Default value
-			"pActionEdgeDeletion" : 0.1,
+			"pActionEdgeDeletion" : 0.0,
 			//  Probablity of changing the action edge by any other action edge in the graph
 			// "pChangeActionClass" : 0.1, // Default value
 			"pChangeActionClass" : 0.2,
@@ -91,7 +91,7 @@
 			"pCrossAgents" : 0.7,
 			// When doing a crossover with two MAPLE agents, probability to do a program crossover instead of an edge crossover.
 			// "pCrossPrograms" : 0.0, // Default value
-			"pCrossPrograms" : 0.5,
+			"pCrossPrograms" : 0.0,
 			// Probability of adding an outgoing Edge to a Team.
 			// "pEdgeAddition" : 0.7, // Default value
 			"pEdgeAddition" : 0.3,
@@ -135,13 +135,13 @@
 	},
 	// Number of generations of the training.
 	// "nbGenerations" : 500, // Default value
-	"nbGenerations" : 50,
+	"nbGenerations" : 2000,
 	// Number of evaluation of each root per generation.
 	// "nbIterationsPerPolicyEvaluation" : 5, // Default value
-	"nbIterationsPerPolicyEvaluation" : 15,
+	"nbIterationsPerPolicyEvaluation" : 3,
 	// Number of evaluation of each root per generation.
 	// "nbIterationsPerPolicyValidation" : 5, // Default value
-	"nbIterationsPerPolicyValidation" : 30,
+	"nbIterationsPerPolicyValidation" : 20,
 	// Number of Constant available in each Program.
 	// "nbProgramConstant" : 0, // Default value
 	"nbProgramConstant" : 10,
@@ -165,7 +165,7 @@
 		{
 			// Indicates if the elites are used in the reproduction process.
 			// "areElitesReproductible" : false, // Default value
-			"areElitesReproductible" : false,
+			"areElitesReproductible" : true,
 			// Percentage of root TPGVertex saved from the tournament at each generation.
 			// "ratioSavedRoots" : 0.05, // Default value
 			"ratioSavedRoots" : 0.5,
@@ -182,5 +182,5 @@
 	},
 	// Value to indicate how many generation between each validation step
 	// "stepValidation" : 1, // Default value
-	"stepValidation" : 50
+	"stepValidation" : 100
 }
