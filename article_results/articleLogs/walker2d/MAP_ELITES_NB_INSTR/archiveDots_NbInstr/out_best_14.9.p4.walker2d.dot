@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 02:18:29
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1949167 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2506602 [fillcolor="#cccccc" shape=point label="1"] //-1.083638|0.679531|0.820887|-0.017658|-0.056909|-0.418283|0.300664|0.615345|-0.606319|-1.580471|
+		I2506602 [shape=box style=invis label="11|0&2|1#2|2#1|8#1|2&#92;n"] 
+		P2506602 -> I2506602[style=invis]
+		A1949167 -> P2506602
+		P1983979 [fillcolor="#cccccc" shape=point label="1"] //0.780942|0.248009|-0.989321|-1.089248|0.109998|-0.576855|-0.348228|0.549377|0.507660|1.543773|
+		I1983979 [shape=box style=invis label="11|0&2|3#2|8#1|12#1|11&#92;n"] 
+		P1983979 -> I1983979[style=invis]
+		A1949167 -> P1983979
+		P2231347 [fillcolor="#cccccc" shape=point label="1"] //0.428926|-0.242339|0.095056|-0.070419|-0.652769|-0.348763|0.529920|-1.310316|0.058605|0.798228|
+		I2231347 [shape=box style=invis label="11|0&0|9#2|8#1|8#1|10&#92;n"] 
+		P2231347 -> I2231347[style=invis]
+		A1949167 -> P2231347
+		P2153126 [fillcolor="#cccccc" shape=point label="1"] //-0.360689|-0.307729|-0.106383|0.967285|-0.707905|0.237317|-0.183518|-0.050186|-0.396999|-1.219800|
+		I2153126 [shape=box style=invis label="15|0&2|3#1|9#1|14#0|14&#92;n"] 
+		P2153126 -> I2153126[style=invis]
+		A1949167 -> P2153126
+		P1875878 [fillcolor="#cccccc" shape=point label="1"] //0.503509|-0.198217|-0.366090|-0.172625|0.460882|0.525312|-0.354525|-0.798403|0.514920|-0.461016|
+		I1875878 [shape=box style=invis label="17|0&2|4#1|5#1|0#0|12&#92;n"] 
+		P1875878 -> I1875878[style=invis]
+		A1949167 -> P1875878
+		P1516441 [fillcolor="#cccccc" shape=point label="1"] //-1.144112|0.369040|0.965474|-0.105819|2.656272|0.702009|-0.981405|0.330704|0.851910|0.551946|
+		I1516441 [shape=box style=invis label="12|0&2|10#2|6#1|0#1|14&#92;n"] 
+		P1516441 -> I1516441[style=invis]
+		A1949167 -> P1516441
+}

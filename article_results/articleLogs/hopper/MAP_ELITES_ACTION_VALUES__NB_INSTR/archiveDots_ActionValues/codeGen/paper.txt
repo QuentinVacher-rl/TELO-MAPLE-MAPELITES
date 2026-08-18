@@ -1,0 +1,1204 @@
+%%
+%% This is file `sample-sigconf.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `all,proceedings,bibtex,sigconf')
+%%
+%% IMPORTANT NOTICE:
+%%
+%% For the copyright see the source file.
+%%
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-sigconf.tex.
+%%
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%%
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%% The first command in your LaTeX source must be the \documentclass
+%% command.
+%%
+%% For submission and review of your manuscript please change the
+%% command to \documentclass[manuscript, screen, review]{acmart}.
+%%
+%% When submitting camera ready or to TAPS, please change the command
+%% to \documentclass[sigconf]{acmart} or whichever template is required
+%% for your publication.
+%%
+%%
+\documentclass[dvipsnames,format=sigconf,anonymous=false,review=false]{acmart}
+
+%% Packages
+\usepackage[acronym]{glossaries}
+\makeglossaries
+\input{acronyms}
+\usepackage{graphicx}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{amsfonts}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{stfloats}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{comment}
+\usepackage{cleveref}
+
+%% For highlights
+\usepackage{soul}
+
+
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+\acmDOI{10.1145/3712256.3726400}
+\acmISBN{979-8-4007-1465-8/2025/07}
+\acmConference[GECCO '25]{The Genetic and Evolutionary Computation Conference 2025}{July 14--18, 2025}{Málaga, Spain}
+\acmYear{2025}
+\copyrightyear{2025}
+
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+
+\usepackage{xcolor}
+\newcommand{\kd}[1]{\textcolor{green}{[K]}}
+\newcommand{\md}[1]{\textcolor{red}{[M]}}
+\newcommand{\nb}[1]{\textcolor{blue}{[N]}}
+\newcommand{\tm}[1]{\textcolor{yellow}{[T]}}
+\newcommand{\pa}[1]{\textcolor{purple}{[P]}}
+\newcommand{\qv}[1]{\textcolor{orange}{[Q]}}
+\newcommand{\sk}[1]{\textcolor{green}{[S]}}
+\newcommand{\gn}[1]{\textcolor{magenta}{[G]}}
+
+% % Macro for suggesting an insertion, deletion, replacement suggestions.
+\newcommand{\addit}[1]{\textcolor{green}{+#1}}
+\usepackage[normalem]{ulem}
+\newcommand{\removeit}[1]{\textcolor{magenta}{\sout{#1}}}
+\newcommand{\replaceit}[2]{\removeit{#1}\textcolor{lime}{#2}}
+
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title[MAP-Elites with Maple]{Combining Genetic Programming and Quality-Diversity to Discover Simple and Interpretable Policies for Continuous Reinforcement Learning Environments}
+
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+% Macros pour les affiliations
+\newcommand{\affilinsa}{%
+  \affiliation{%
+    \institution{Univ Rennes, INSA Rennes, CNRS, IETR -- UMR 6164}
+    \city{F-35000 Rennes}
+    \country{France}
+  }
+}
+\newcommand{\affilmcmaster}{%
+  \affiliation{%
+    \institution{McMaster University}
+    \city{Hamilton}
+    \country{Canada}
+  }
+}
+\newcommand{\affiltoulouse}{%
+  \affiliation{%
+    \institution{University Toulouse Capitole, IRIT - CNRS UMR5505}
+    \city{Toulose}
+    \country{France}
+  }
+}
+
+% Auteurs
+\author{Quentin Vacher}
+\email{quentin.vacher@insa-rennes.fr}
+\orcid{0009-0001-9568-7196}
+\affilinsa
+
+
+% placed myself randomly, feel free to place me wherever works best
+\author{Giorgia Nadizar}
+\email{giorgia.nadizar@irit.fr}
+\orcid{0000-0002-3535-9748}
+\affiltoulouse
+
+\author{Stephen Kelly}
+\email{spkelly@mcmaster.ca}
+\orcid{0000-0002-6071-4705}
+\affilmcmaster
+
+
+\author{Nicolas Beuve}
+\email{nicolas.beuve@insa-rennes.fr}
+\orcid{0000-0002-1371-4016}
+\affilinsa
+
+\author{Mickaël Dardaillon}
+\email{mdardail@insa-rennes.fr}
+\orcid{0000-0001-6862-2090}
+\affilinsa
+
+\author{Karol Desnos}
+\email{kdesnos@insa-rennes.fr}
+\orcid{0000-0003-1527-9668}
+\affilinsa
+
+
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Vacher et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+\textcolor{green}{+todo: update for extension}
+Over the last decades, the need to solve complex tasks using machine learning techniques has grown significantly. Deep learning algorithms achieve state-of-the-art performance in most tasks, but at the cost of high computational complexity and limited interpretability. In domains such as Reinforcement Learning (RL), understanding the agent behavior ensures reliability and safety. \gn{it's a bit weird to say we do it, then criticize, then say how we fix. Maybe say: gp is an alternative, it suffers from this, we fix it like that?} In this work, we explore Genetic Programming (GP) as a promising solution for RL tasks, providing simpler and more interpretable solutions. While GP achieves competitive results in low-complexity environments, it struggles in environments with high-dimensional action spaces\sk{Do you have a ref for this? I see one referring to Giorgia's paper later, but this is a main motivator for this work and might need more evidence from the lit}. To address this, we propose Multi-Action Programs through Linear Evolution (MAPLE), a GP algorithm in which the agent is a team of multiple Linear Genetic Programs (LGPs), each responsible for an action. MAPLE is evaluated on the MuJoCo suite and outperforms state-of-the-art GP algorithms and a small deep RL model. It achieves comparable performance to a larger deep RL network in low-dimensional environments while maintaining significantly lower complexity. By decomposing the action decision into different Programs, it is possible to understand which parts of the states are needed for each action. This demonstrates the potential of MAPLE for interpretable and efficient solutions in RL.
+\end{abstract}
+
+
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10011007.10011074.10011092.10011782.10011813</concept_id>
+<concept_desc>Software and its engineering~Genetic programming</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10003752.10010070.10010071.10010261</concept_id>
+<concept_desc>Theory of computation~Reinforcement learning</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Software and its engineering~Genetic programming}
+\ccsdesc[300]{Theory of computation~Reinforcement learning}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{Genetic programming, Reinforcement Learning, Interpretability}
+
+
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\section{Introduction}
+\label{sec:Introduction}
+Advanced control tasks increasingly depend on machine learning approaches.
+This paper focuses on \gls{rl}~\cite{sutton2018reinforcement}, where an agent learns through iterative interaction with an environment.
+The agent perceives the environment, selects actions, and receives updated observations and rewards after each action.
+The objective in \gls{rl} is to maximize cumulative reward over time, achieved by learning an optimal decision-making policy based on the state of the environment.
+
+Deep \gls{rl} algorithms~\cite{8103164}, which employ artificial neural networks, demonstrate superior performance in diverse environments.
+However, their complexity complicates interpretability~\cite{milani2024explainable} and escalates computational demands, often necessitating specialized hardware.
+Policy interpretability is especially critical in robotics, where comprehending learned behaviors is essential for ensuring system reliability~\cite{puiutta2020explainable}.
+
+The MuJoCo suite~\cite{mujocoPaper} offers a range of continuous control tasks with varying observation and action space dimensions, serving as a standard benchmark for \gls{rl}.
+While deep \gls{rl} methods achieve state-of-the-art performance on MuJoCo, their effectiveness depends on expert-selected neural network architectures, and their decision-making processes remain difficult to interpret.
+Efforts to enhance interpretability include clustering agent behaviors to decompose the problem into smaller, more manageable subproblems~\cite{akrour2021continuous}.
+Yet, identifying which observation space features are critical for specific actions remains unresolved.
+
+Evolutionary \gls{rl} using \gls{gp}~\cite{glanois2024survey,kelly2024erl} presents an alternative, learning from natural selection as visualized by \Cref{fig:ga} and yielding solutions that are simpler and more interpretable.
+However, these methods often underperform relative to deep \gls{rl} in complex environments.
+A comparative study~\cite{nadizar2024naturally} evaluated \glspl{lgp} and \glspl{cgp} across eight MuJoCo tasks, benchmarking them against two leading deep \gls{rl} algorithms.
+The \gls{gp} approaches matched or exceeded the performance of at least one deep \gls{rl} method in five tasks.
+Nonetheless, their performance degraded in environments with high-dimensional action spaces, suggesting the need to explore alternative \gls{gp} representations capable of handling multiple continuous outputs.
+To address environments with high-dimensional action spaces, the \gls{maple} architecture was introduced in~\cite{vacher2025maple}.
+This method utilizes a team of \gls{lgp} individuals, each responsible for a single continuous action, thereby facilitating scalability.
+Benchmarking across several MuJoCo tasks revealed that \gls{maple} surpasses existing \gls{gp} approaches and achieves performance on par with deep \gls{rl} in environments with low-dimensional actions.
+In terms of computational complexity, quantified by the number of \gls{mac} operations, \gls{maple} matches the performance of deep \gls{rl} baselines while maintaining a model complexity three orders of magnitude lower, comparable to that of an individual \gls{lgp}.
+
+
+
+\gn{i guess we should introduce QD already here, no? I can take care of it if you'd like :)}
+\qv{FOr sure for sur :D And i could add the part about the results of QD after that (like the score on the humanoid and the maple being statistically equal to the sac on the ant) if your're not sure about this part :)}
+
+In this work, we extend the \gls{maple} architecture through a simplified evolution and the integration of the \gls{me} algorithm.
+We investigate three diversity descriptors aimed at enhancing behavioral, phenotypic, and genotypic diversity.
+Substantial improvements are observed in complex environments.
+For the \textit{Ant} task, optimizing genotypic diversity enables \gls{maple} to outperform its original formulation and achieve performance statistically equivalent to that of deep \gls{rl}.
+In the \textit{Humanoid} environment, increased phenotypic diversity allows \gls{maple} to maintain upright posture, an achievement never achieved before for \gls{gp} based approaches.
+These results are obtained with reduced agent complexity, as the highest scoring solutions use an average of 16 instructions for \textit{Ant} and 19 for \textit{Humanoid}, thereby facilitating interpretability.
+
+The remainder of this paper is organized as follows.
+Related work on \gls{rl}, \gls{gp} and quality-diversity algorithms is presented in \Cref{sec:RW}.
+The \gls{maple} and \gls{me} algorithms are described in \Cref{sec:background}.
+The experimental setup is detailed in \Cref{sec:Setup}, and the effectiveness of \gls{me} is assessed in \Cref{sec:Results}.
+The interpretability of the results is explored in \Cref{sec:Tnterpretability}
+Future research directions are proposed in the conclusion, \Cref{sec:conclusion}.
+
+
+
+\begin{figure*}[t]
+  \begin{center}
+    \includegraphics[width=0.99\textwidth]{data/ga.pdf}
+  \end{center}
+    \caption{Visualization of a genetic algorithm training loop. The process start with the initialization, creating randomly a population. This population is evaluated on the task learned. A selection algorithm is then apply to select the surviving agent based on the evaluation results. New offspring are created by copying survival agents, crossing them over and mutating them randomly. This evolution process is repeated until a new population of offspring is created. A loop is repeated starting from the evaluation as long as a finished criteria is not reached.}
+    \label{fig:ga}
+\end{figure*}
+
+\begin{figure*}[!ht]
+    \centering
+    \begin{subfigure}[b]{0.57\textwidth}
+        \includegraphics[width=\textwidth]{data/figLGP.pdf}
+        \caption{Inference of a \gls{lgp} agent.}
+        \label{fig:lgp_show}
+    \end{subfigure}
+    \hspace{0.04\textwidth}
+    \begin{subfigure}[b]{0.37\textwidth}
+        \includegraphics[width=\textwidth]{data/figMAPLE.pdf}
+        \caption{Inference of a \gls{maple} agent.}
+        \label{fig:maple_show}
+    \end{subfigure}
+    \caption{Inference process of a \gls{lgp} and a \gls{maple} agent. For $N$ actions, the \gls{lgp} agent outputs the first $N$ registers after executing its instructions. The \gls{maple} agent is composed of a maximum of $N$ \glspl{lgp}, and each one outputs its first register.}
+    \label{fig:lgp_maple_show}
+\end{figure*}
+
+\section{Related Work}
+\label{sec:RW}
+
+Complex \gls{rl} problems, including those in the MuJoCo suite, can be addressed using various algorithmic approaches.
+This section reviews the most prominent methods.
+Deep \gls{rl} algorithms, the predominant approach, are discussed in \Cref{sec:RW_drl}.
+Alternative solutions based on \gls{gp} are examined in \Cref{sec:RW_gp}.
+Additionally, quality diversity algorithms, in particular \gls{me}, are reviewed in \Cref{sec:QD_RW}.
+
+\subsection{Deep \gls{rl} for complex environments}
+\label{sec:RW_drl}
+
+Over the past decade, deep \gls{rl} algorithms have become the standard for addressing complex MuJoCo environments such as \textit{Humanoid} and \textit{Ant}.
+Prominent methods include \gls{ppo}~\cite{schulman2017ppo}, \gls{sac}~\cite{haarnoja2018sac}, and \gls{td3}~\cite{fujimoto2018td3}, each employing distinct network architectures and learning strategies.
+These approaches achieve high performance across the MuJoCo suite.
+
+However, solving these environments typically requires multi-layer neural networks with hundreds of hidden units.
+For instance, the \gls{sac} implementation for MuJoCo utilizes two layers of 256 units each, resulting in over 100 thousand \gls{mac} operations per inference.
+This complexity not only hinders interpretability but also demands significant computational resources.
+While efforts to enhance model explainability have been made~\cite{heuillet2020explainabilitydeepreinforcementlearning}, fully characterizing the behavior of such networks remains unresolved.
+
+
+\subsection{\acrlong{gp} solutions}
+\label{sec:RW_gp}
+
+\acrfull{gp}, first introduced by Koza and Rice with \gls{tgp}~\cite{koza1992automatic}, offers interpretable and computationally efficient solutions by encoding policies in agent represented by symbolic binary expression trees with far fewer parameters than deep \gls{rl}.
+Alternative representations, such as \acrfull{lgp}~\cite{brameier2007lgp} and \acrfull{cgp}~\cite{cgp}, have since been developed.
+
+In~\cite{videau:gpcartpole}, \gls{tgp} and \gls{lgp} are evaluated on classic control tasks from Gymnasium~\cite{towers2025gymnasiumstandardinterfacereinforcement}, such as CartPole, Mountain Car, Lunar Lander, and the MuJoCo Hopper environment.
+The study also included both the standard and hardcore versions of Bipedal Walker, an environment where a walker must navigate randomly generated obstacles.
+The standard version features simple obstacles, while the hardcore version introduces more complex challenges.
+While \gls{gp} methods achieved performance comparable to deep learning approaches on simpler tasks and the standard Bipedal Walker, they underperformed relative to deep \gls{rl} in the hardcore Bipedal Walker and Hopper environments.
+More recently, Nadizar et al.~\cite{nadizar2024naturally} benchmarked \gls{lgp} and \gls{cgp} across eight MuJoCo environments, six of which involve multiple actions.
+The results showed that \gls{lgp} and \gls{cgp} outperformed or equaled \gls{ppo} and \gls{sac} in single-action environments and Swimmer.
+In half of the tested environments, \gls{gp} surpassed at least one deep \gls{rl} algorithm.
+However, \gls{gp} underperformed relative to deep \gls{rl} in \textit{Ant} and \textit{Half Cheetah}, which require eight and six continuous actions per step, respectively, wich are the two highest action dimensions among the tested tasks.
+Notably, \gls{gp} was not evaluated on \textit{Humanoid}, the most challenging environment with 17 actions, where even deep \gls{rl} faces difficulties.
+To the best of our knowledge, no study has successfully demonstrated a \gls{gp} agent capable of learning the \textit{Humanoid} task.
+
+
+Several extensions of \glspl{gp} have been proposed to tackle complex tasks through problem decomposition, employing architectures where an agent comprises a team of multiple \glspl{gp}.
+The concept of using multiple \glspl{gp} as a single agent was first introduced by Haynes et al.~\cite{haynes1995evolving} and later applied to \gls{lgp} in~\cite{brameier2001evolving}.
+Building on this idea, Kelly and Heywood developed the \gls{tpg} algorithm~\cite{kelly2017emergent}, which constructs graphs of \gls{lgp} programs for the Arcade Learning Environment~\cite{Bellemare_2013}.
+At its introduction, \gls{tpg} achieved performance comparable to deep \gls{rl} on Atari games but with significantly lower model complexity.
+In \gls{tpg}, both the \glspl{lgp}, referred to as Programs and the team composition emerge from the evolutionary process.
+Additionally, \gls{tpg} agents demonstrated automatic feature selection within the observation state vector, a valuable property for interpretability as it clarifies which state vector components are used for different subtasks.
+Originally, \gls{tpg} supported only discrete actions, but extensions for continuous actions were later proposed, notably in~\cite{kelly2021evolving}, where \gls{tpg} successfully learned classic control environments from Gymnasium.
+A variant of \gls{tpg} is also proposed in~\cite{amaral2022benchmarking} to learn the standard Bipedal Walker, achieving rewards superior to standalone \gls{lgp} and comparable to deep \gls{rl} solutions.
+Another extension of \gls{tpg} for continuous actions, presented in~\cite{smith2025interpreting}, enabled learning complex tasks in Dota 2.
+
+Inspired by the \gls{tpg} approach, the \gls{maple} algorithm is introduced in~\cite{vacher2025maple} specifically for environments with multiple continuous actions, such as those in MuJoCo.
+Like \gls{tpg}, \gls{maple} employs a team of \glspl{lgp} agents, each responsible for a single continuous action.
+However, \gls{maple} does not incorporate emergent hierarchical layers of teams.
+Despite its simpler structure, \gls{maple} always matched or outperformed \gls{tpg} on tested MuJoCo environments and surpassed standalone \gls{lgp}.
+It even achieved results comparable to deep \gls{rl} solutions in four of the evaluated MuJoCo tasks.
+
+\subsection{Quality-Diversity}
+\label{sec:QD_RW}
+
+Furthermore, \gls{gp} solutions can easily fall into local minimum, which can often be due to diversity issues.
+It happens for \gls{maple} too where the authors claims that the random initialialization of a population, and its initial convergence heas a huge impact on the final results.
+To assess this issue, quality-diversity algorithms have been proposed, in particular the \gls{me} algorithm~\cite{mapElites}, applied frequently to the MuJoCo environments~\cite{cully2013behavioral,cully2017quality}.
+This algorithms improve the diversity by generating various agents with different policies based on specified descriptors.
+Descriptors are function extracting features from the environment or the agent, where the goal is that two agents outputting different descriptor values are different.
+By having a population of agents each corresponding to a specific set of descriptor values, the diversity is garanted to be better
+Initial research uses hand-crafted descriptors, focusing on the behavior of the robot the agent controls.
+In the case of \gls{gp}, phenotypic or genotypic descriptors have been used to enable structural diversity~\cite{dolson2019exploring,nadizar2024searching}.
+The genotype represents a whole \gls{gp} agent, while the phenotype represents only the observable part of it, the part that affect the policy of the agent.
+Another area of study focuses on the automatic detection of descriptors using unsupervised machine learning to discover them~\cite{coiffard2025overcoming,grillotti2022unsupervised}.
+
+
+\section{Background}
+\label{sec:background}
+
+This studies proposed a new \gls{gp} architecture, inspired from the \gls{tpg}, which based its evolution on the evolution of sub-\glspl{lgp}, and how these sub-\glspl{lgp} interacts with each others.
+Thus, the \gls{lgp} and \gls{tpg} algorithms are described respectively in \Cref{sec:background:lgp} and \Cref{sec:background:maple}.
+Furthermore, quality-diversity algorithms have been shown to enhance results by balancing both diversity and quality.
+The quality-diversity algorithm \gls{me} is applied and detailed in~\Cref{sec:background:qd}.
+
+
+\subsection{Linear Genetic Programming}
+\label{sec:background:lgp}
+
+An \gls{lgp} agent~\cite{brameier2007lgp} consists of a fixed set of registers and a sequence of instructions optimized through evolution.
+The inference process is illustrated in \Cref{fig:lgp_show}.
+Each instruction takes as input either a variable from the observation space or a value stored in a register, and its output is saved to a register.
+After executing all instructions, the agent outputs the values stored in the first $n_\text{out}$ registers, where $n_\text{out}$ corresponds to the number of outputs required by the task.
+Due to the structure of the agent, some instructions may become redundant during inference, writing values to registers that are either unused or overwritten by subsequent operations.
+Thus, the instructions in an \gls{lgp} can be categorized into two groups: introns, which do not influence the policy, and effective instructions, which directly affect the output values.
+Although introns have no phenotypic impact, they are retained during evolution to promote neutrality and diversity, facilitating broader exploration of the search space and the discovery of novel policies~\cite{hu2025neutrality}.
+
+
+To evolve \glspl{lgp} agent during the evolution process, crossover between two \glspl{lgp}, and/or mutation operations on a single agent can be performed.
+A crossover between two agents selects a subset of lines from both agents and exchanges them.
+The mutation operations consist in either adding, removing, or swapping some lines, or mutating a line by changing the operation done or the involved registers or inputs locations.
+
+Looking at how \gls{lgp} outputs action, it can be hypothesized that as the dimension of the output increases, the number of instructions required to form a viable agent increases, as does the time complexity to learn the policy.
+This is the reason why \gls{maple} presented in the next section proposes to divide the task into one program per action.
+
+\subsection{\gls{maple}}
+\label{sec:background:maple}
+
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.3\textwidth]{data/FigureMAPLE_hopper.pdf}
+    \caption{Example of a \gls{maple} agent on the \textit{Hopper} environment, an environment with three actions. Each action is a continuous value that sets the torque of one hinge.}\label{fig:TPGs}
+    \label{fig:mapleFig}
+\end{figure}
+\begin{algorithm}[]
+\caption{Inference Process for a \gls{maple} agent.}
+\label{algo:inference}
+\begin{algorithmic}[1]
+\State \textbf{Input:} state inputs $\vec{s}(t)$, vertex \( V \) with edges \( E_i \), each containing a Program \( p_i \) and pointing to an action \( a_i \), registers \( R_{p_i} \) set to zero, continuous actions \( \vec{v} \) set to zero
+\State \textbf{Output:} Continuous actions \( \vec{v} \)
+
+\For{each edge \( E_i \) in \( V \)}
+    \State Execute the Program \( p_i \) with input \( \vec{s}(t) \)
+    \State \( \vec{v}(a_i) \gets R[0]_{p_i(\vec{s}(t))} \)
+\EndFor
+\State \( \vec{v} \gets \tanh{\vec{v}} \)
+\end{algorithmic}
+\end{algorithm}
+
+
+As presented in \Cref{sec:background:lgp}, agents represented by a single \gls{lgp} are able to solve environments with one or a few continuous actions more easily than environments with many continuous actions to select at each step.
+In \gls{maple}, the environment is partitioned at this action level using a team of \gls{lgp} Programs which all execute in parallel, each defining a single control output.
+
+\begin{algorithm}[]
+\caption{Crossover applied on two new vertices \( V'_1 \) and \( V'_2 \). The function \( \text{random()} \) returns a uniformly selected real value in \([0, 1]\).}
+\label{algo:crossover}
+\begin{algorithmic}[1]
+\State \textbf{Input:} vertices \( V'_1 \), \( V'_2 \), crossover probability \( p_{\text{cross}} \), number of actions \( n_a \)
+
+\State \( p_{\text{used}} = p_{\text{cross}} \)
+\While{\( \text{random()} \leq p_{\text{used}} \)}
+    \State Select a random index \( i \) in \([0, n_a]\)
+    \State Swap the learners at index \( i \) between \( V'_1 \) and \( V'_2 \)
+    \State \( p_{\text{used}} = p_{\text{used}} \times p_{\text{cross}} \)
+\EndWhile
+
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[]
+\caption{Mutations applied on a new Vertex \( T' \). The function $random()$ returns an uniformly selected real value in $[0, 1]$.}
+\label{algo:mutation}
+\begin{algorithmic}[1]
+\State \textbf{Input:} vertex \( V' \), probabilities \(, p_{\text{swap}}, p_{\text{mut}} \)
+
+
+\State \( p_{\text{used}} = p_{\text{swap}} \)
+\While{random() $\leq p_{\text{used}}$}
+    \State Select two edge \( E_i \) and \( E_j \) from \( V' \).
+    \State Swap their actions: \( a_i \) and \( a_j \)
+    \State \( p_{\text{used}} = p_{\text{used}} \times p_{\text{swap}} \)
+\EndWhile
+
+
+\State \( p_{\text{used}} = p_{\text{mut}} \)
+\While{random() $\leq p_{\text{mut}}$}
+    \State Randomly select an edge \( E_i \) from \( V' \).
+    \State Mutate \( p_i \).
+    \State \( p_{\text{used}} = p_{\text{used}} \times p_{\text{mut}} \)
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Inference}
+\label{sec:multiLGP_inf}
+
+In \gls{maple}, the population is represented by a graph structure.
+This graph structure is a direct inheritance of the inspiration of \gls{maple} from \gls{tpg}.
+This representation could be change if necessary, since a \gls{maple} agent is simply an vertex, with an edge for every action in the environment, the number of edges being then fixed.
+All Programs are executed and each one outputs a single continuous value.
+\Cref{fig:mapleFig} shows a \gls{maple} agent controlling the \textit{Hopper} environment.
+
+The inference process is illustrated in \Cref{fig:maple_show} and detailed in \Cref{algo:inference}.  
+It proceeds as follows.
+First, the registers of all Programs $R_p$ are set to zero and the vector of continuous actions $\vec{v}$ is initialized.
+Then, the vertex inference makes all the edges execute their intern Program.
+When a Program is executed, its input is the current state $\vec{s}(t)$ of the \gls{rl} environment and its output is the first register of the Program $R[0]_p$.
+For an edge $E_i$ the output of its Program $p_i$ is the continuous action corresponding to the action vertex $a_i$.
+Thus, for each edge $E_i$, the action set in the vector of continuous actions can be defined as $\vec{v}(a_i) = R[0]_{p_i(\vec{s}(t))}$.
+Finally, a $tanh$ function is applied to the vector of continuous actions to change the range to $\mathbb{R}$ to $[-1, 1]$, and the vector is applied to the environment.
+
+\subsubsection{Reproduction and mutation of the population}
+\label{sec:multiLGP_evo}
+
+
+\gls{maple} is a solution inspired by \gls{tpg}\cite{kelly2017emergent}, thus the initial evolution process of a \gls{maple} agent got a lot of similarities with it.
+In the first design of \gls{maple} detailed in~\cite{vacher2025maple}, the evolution process of \gls{maple} uses probabilities to add and remove edges from the vertex, making the number of edges changing over time.
+Appendix~\ref{appendix:nbActions} shows that the maple solutions always converge to a fixed number of Programs equal to the number of actions.
+Thus in this paper, the evolution process is simplified by fixing the shape of the agent to always have one Program per action.
+Having a fixed size enables better simplification of the architecture and did not affect the performances of \gls{maple}, however it is not detailed furthermore as it is not the main interest of the paper.
+However, to mutate a \gls{maple} agent with a fixed size of edges, mutation to add and remove Programs cannot be used anymore, crossover are used instead.
+
+Once the evaluation and the selection of the population is done, the evolution process reproduces some agents and mutates them to create a new population of offspring.
+This process repeat a loop until the number of wanted agent is reached.
+First, two random vertices in the surviving population $V_1$ and $V_2$ are duplicated to create $V_1'$ and $V_2'$, with the same duplicated edges.
+\Cref{algo:crossover} describes how this two newly duplicated vertices $V'_1$ and $V'_2$ are crossed.
+Basically, it swaps action Programs for the corresponding action among two individuals.
+
+Once the crossover is done, the mutation process described in~\Cref{algo:mutation} is applied on both of the agents $V_1'$ and $V_2'$.
+It is the same as the original design, without using mutations to add and delete edges, but only the swap of action and the mutation of a Program.
+The swap of action will select two edges randomly and swap their action vertex destination.
+Mutating a Program means applying mutations on the \gls{lgp} agent, following the \gls{lgp} mutations described in~\Cref{sec:background:lgp}.
+
+Changing the evolution process by adding crossoer does not affect significantly the results, as shown by Appendix~\ref{appendix:oldNewMaple}.
+In the litterature of \gls{gp}, crossover are usually consider as the explotation, meaning improving a policy, while mutation are closer to exploration, meaning exploring the search space of policies.
+The fact that crossover does not have impact on the results implies that the \gls{maple} falls into local minima, where improving the policy is not efficient.
+
+
+\subsection{MAP-Elites}
+\label{sec:background:qd}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.47\textwidth]{data/mapElites.pdf}
+    \caption{Example of an archive learned with \gls{me} with two descriptors. The archive is partially filled with agents of various scores}
+    \label{fig:mapElites}
+\end{figure}
+Quality diversity algorithms are a class of evolutionary computation methods designed to maintain a diverse population of agents while optimizing their performance~\cite{cully2013behavioral,cully2017quality}.
+The selection process is guided by two key components:
+\begin{itemize}
+    \item \textbf{Fitness Evaluation:} Agents are evaluated based on their performance in the task, as measured by a standard fitness function.
+    \item \textbf{Feature Descriptors:} Each agent is characterized by a set of $n_d$ descriptors, which encode task-specific information which characterize a genotype, phenotype or behavioral aspect of the agent, like for example the number of steps taken by a robot during evaluation.
+\end{itemize}
+Unlike traditional evolutionary algorithms that focus solely on maximizing fitness, quality diversity algorithms aim to discover a wide range of high-performing solutions across a predefined feature space.
+The goal is to ensure exploration of the solution space and preventing premature convergence of the agents into suboptimal policies.
+
+
+When changing the design of \gls{maple}, using crossover instead of mutation to add and remove edges, the results did not improve, see Appendix~\ref{appendix:oldNewMaple}
+
+In this work, the \gls{me} algorithm~\cite{mapElites} is used to improve diversity.
+\gls{me} relies on an archive, represented by a table of $n_d$ dimensions, that stores the best agents according to their descriptors, \Cref{fig:mapElites} presents an example of an archive during a training with \gls{me}.
+To address the scaling challenges associated with the dimensionality of the descriptors, the archive is constructed using the Centroidal Voronoi Tesselation process, as in~\cite{vassiliades2017using}, ensuring uniform coverage of the descriptor space and a fixed archive size, independent of the number of descriptors.
+The archive is constructed as follows.
+At the start of training, an archive of $n_d$ dimensions is created, with each dimension covering the accessible range of values of each descriptor.
+Then, $n_\text{centroids}$ centroids are placed in the descriptor space using Centroidal Voronoi Tessellation, ensuring uniform coverage and optimal spacing, done by clustering of random points generated in the sensible range.
+A population of arbitrary size $s_\text{pop}$ agents is initialized and evaluated on the task.
+Each evaluated agent is inserted into the archive at the nearest centroid based on its descriptor values.
+The agent is only retained if the corresponding cell is either empty or if its performance surpasses that of the agent already stored for that centroid; otherwise, it is discarded.
+Since only one agent is kept per cell, the number of cells need to be set to keep a reasonable amount of agents.
+
+After filling the archive, the population of the next generation is created by sampling, duplicating, and mutating agents stored in the archive.
+This process is repeated for $n_\text{gen}$ generations or until a termination criterion is met.
+
+\section{Experimental setup}
+\label{sec:Setup}
+
+Our goal in this study is to use the \gls{me} on \gls{maple}, to improve the diversity and thus increasing the results. 
+Improving the diversity might also affect the complexity and the interpretability of the agents, by potentially creating multiple agents with similar fitness but different descriptor values, and thus different structures or behaviors.
+The MuJoCo environments chosen to tests this effectiveness are described in \Cref{sec:Setup_mujoco}.
+Then the configuration of \gls{maple} itself is presented in \Cref{sec:Setup_GP}.
+After that, the \gls{me} implementation and the descriptor used are explained in~\Cref{sec:Setup_MapElites}.
+Finally, two deep \gls{rl} solutions, \gls{ppo} and \gls{sac} are described in \Cref{sec:Setup_DRL}.
+The data and code used in the experiments are available at:~\cite{QVACHER_GECCO_2025}. \qv{update}
+
+\subsection{MuJoCo environments setup}
+\label{sec:Setup_mujoco}
+
+
+
+In the paper presenting \gls{maple}~\cite{vacher2025maple}, six MuJoCo environments has been used in this contribution.
+Five of them have multiple actions, and the last one has a single action, to show that \gls{maple} is able to learn on single action environments as well, where it behaves as a single \gls{lgp}.
+In this work we focuses only on the five environments with multiple continuous actions.
+Ranked by increasing number of actions, the environments are \textit{Hopper}, \textit{Half Cheetah}, \textit{Walker 2D}, \textit{Ant}, and \textit{Humanoid}.
+For all environments, the fourth version of MuJoCo environment from Gymnasium~\cite{towers2025gymnasiumstandardinterfacereinforcement} is used.
+The dimensions of the observation and the number of actions are detailed in \Cref{tab:mujcoStateAndAction}.
+No published paper has used a \gls{gp} algorithm on the \textit{Humanoid} and learned it successfully to the best of our knowledge.
+This environment is by far the most complex, with seventeen actions.
+
+For all the environments, the number of time steps is set to the default value of 1000 per episode.
+The Python environments of MuJoCo in Gymnasium are used for the deep \gls{rl} algorithms.
+Python environments for Gymnasium are wrappers built on top of the MuJoCo library, written in C/C++.
+The implementation of \gls{maple} uses the Gegelati library~\cite{desnos2021gegelati} written in C++.
+To compare with deep \gls{rl}, the Python code of Gymnasium has been adapted into C++ code and tested to have the same behavior.
+
+
+\subsection{\gls{maple} setup}
+\label{sec:Setup_GP}
+
+The hyperparameters used to train \gls{maple}, and their \glspl{lgp} programs are listed in Appendix~\ref{appendix:parameters}
+The instruction set of the \gls{lgp} used is $H = \{ +$, $-$, $\times$, $\div$, $\max$, $\exp$, $\log$, $\sin$, $\cos$, $\operatorname{tan}$, $\operatorname{modulo} \}$.
+Instructions include constants, with constants mutation based on the mutation in AutoML-Zero~\cite{automlzero}, where the value can be randomly multiplied or divide with equal probability by a value sampled in $[1,\ 2]$, then the sign of the constant can be changed with a probability of $10\%$.
+
+Because of randomness in the episodes, for each generation, an agent is evaluated over three episodes with different random seeds and its score is the mean episode reward.
+If the agent survives until next generation, it can be evaluated again for three episodes, up to twenty episodes.
+A different number of generations is set to learn each environment depending on the number of available actions in the MuJoCo environment.
+A validation step is done, testing the surviving agents with 20 episodes with different random seeds to evaluate the performance with precision.
+This validation step is not done every training generation in order to limit its computational time overhead.
+The number of training generations, and gap between each validation step is detailed in \Cref{tab:mujcoStateAndAction}.
+The size of the population is set to $n_\text{pop} = 1000$ and each training is done with 10 repetitions with a different seed to ensure consistency.
+
+\begin{table*}[]
+\caption{Dimensions of the five MuJoCo environments used, as well as the number of generations for each of their training and the validation step gap, which is the number of training generations between each validation evaluation.}
+% \caption{State and action dimensions of the six MuJoCo environments used.}
+\label{tab:mujcoStateAndAction}
+\begin{tabular}{@{\hspace{0.5cm}}l@{\hspace{0.5cm}}l@{\hspace{0.5cm}}l@{\hspace{0.5cm}}l@{\hspace{0.5cm}}l@{\hspace{0.5cm}}}
+\toprule
+\textbf{Environment} & \textbf{State Dimension} & \textbf{Action Dimension} & \textbf{Nb. Generations} & \textbf{Validation Step Gap}\\
+\midrule
+Hopper & $\mathbb{R}^{11}$ & $[-1, 1]^3$ & $2000$ & $50$\\
+Half Cheetah & $\mathbb{R}^{17}$ & $[-1, 1]^6$ & $2000$ & $50$\\
+Walker 2D & $\mathbb{R}^{17}$ & $[-1, 1]^6$ & $2000$ & $50$\\
+Ant & $\mathbb{R}^{27}$ & $[-1, 1]^8$ & $5000$ & $100$\\
+Humanoid & $\mathbb{R}^{348}$ & $[-0.4, 0.4]^{17}$ & $10000$ & $200$\\
+
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{MAP-Elites setup}
+\label{sec:Setup_MapElites}
+
+The original configuration of \gls{maple} uses a Tournament selection~\cite{tournament} with a size $3$, and $5$\% of the total population saved as elites.
+Using \gls{me} will directly replace this Tournament selection since the surviving rules are based on the descriptor values of the agents.
+Three descriptors are tested in this study and compared to the Tournament Selection:
+\begin{itemize}
+    \item \gls{fc}: the descriptor mainly used in the literature~\cite{cully2015robots}. The archive dimension is equal to the number of feet the robot has: 1 for the \textit{hopper}, 2 for the \textit{half cheetah}, \textit{walker2d}, and \textit{humanoid}, and 4 for the \textit{ant}. The data collected is the ratio of simulation steps during an episode where the feet are in contact with the ground.
+
+    \item \gls{av}: since \gls{maple} divides the task at the action level, we propose a phenotypic descriptor where the archive dimension is the number of continuous actions. The data collected is the absolute average of the action values taken. Since the action range is $[-1, 1]$, taking the classic average might lead to values of 0, so the absolute average is used to describe the intensity of action usage.
+
+    \item \gls{ni}: each \gls{maple} agent has a fixed number of Programs, equal to the number of actions. This descriptor outputs the number of instruction lines, introns or effective lines, focusing on genotypic diversity. The archive dimension is also equal to the number of continuous actions.
+\end{itemize}
+
+
+The descriptors can create archives in high dimensions, especially with \gls{av} and \gls{ni}, where the dimensions can rise to eight or seventeen for the \textit{ant} or \textit{humanoid}.
+The number of cells in the archive is set to 1000 for every environments, except for the \textit{ant} and the \textit{humanoid}, which are set to 3000 and 5000, respectively.
+
+As in~\cite{nadizar2024searching}, a test is performed with a double archive, to create different diversities.
+The test is done with \gls{av} and \gls{ni} descriptors.
+The process is almost identical to the classic \gls{me} process, except that two archives are filled simultaneously.
+An agent only needs to be saved in one archive to be duplicable during the mutation process, but can be saved in both.
+Thus some agents belonging to the same cell in the first archive might belong to different cells in the second archive.
+That way, it allows some agents with a similar diversity for the first descriptor, but different diversity on another to survive.
+
+\subsection{Deep \gls{rl} setup}
+\label{sec:Setup_DRL}
+
+For the deep \gls{rl} algorithms, the comparison is done with \gls{ppo} and \gls{sac} and the results used are the results from~\cite{vacher2025maple}.
+The size of the model used to evaluate the \gls{sac} proposed in its paper is kept~\cite{haarnoja2018sac}.
+The \gls{sac} is trained with two layers of 256 hidden units.
+The activation functions for all units is a $ReLu(X)$, except the last layer using a $tanh(X)$ function
+The number of evaluation steps is also taken from the same paper with 500 thousand steps for one million for \textit{Hopper}, \textit{Half Cheetah} and \textit{Walker 2D}, three million for \textit{Ant}, and five million for \textit{Humanoid}.
+
+In order to have different complexity for each algorithms, \gls{ppo} is trained with two layers of 64 hidden units instead of 256.
+\gls{ppo} and \gls{sac} learn differently.
+To have approximately the same training time for \gls{ppo} and \gls{sac}, \gls{ppo} is trained with ten times more evaluation step than the \gls{sac}.
+The implementation used is Stable Baseline~3~\cite{raffin2021stable} with default parameters.
+The validation score of the deep \gls{rl} algorithm is the mean score of 20 episodes, as done for the \gls{maple} validation.
+
+For benchmarking, \gls{maple} is trained over 2000 generations for the \textit{Hopper}, \textit{Half Cheetah}, and \textit{Walker 2D} environments.
+Each agent undergoes three episodes per generation, with a maximum of 1000 steps per episode.
+This results in 3000 evaluation steps per agent per generation.
+If an agent survives the entire training process, it accumulates six million steps, and the total across all agents reaches six billion steps.
+It is important to note that this metric is not directly comparable to the training of deep \gls{rl} methods, as \gls{gp} leverages parallel CPU-based training, whereas deep \gls{rl} typically relies on GPU acceleration.
+Additionally, the sample complexity differs fundamentally: deep \gls{rl} policies process all state variables at every step, while \gls{gp} solutions may only utilize a subset, potentially reducing the total data observed during training.
+
+
+\section{Experimental results}
+\label{sec:Results}
+
+
+\begin{figure*}[t]
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{data/mapleTraining/mapleTrainingResults.pdf}
+  \end{center}
+    \caption{Score of \gls{maple} over generations on the five MuJoCo environments. The main curve is the mean score over 10 seeds, and the shaded area is the standard deviation. \textit{TOURN} stands for tournament, meaning the initial \gls{maple} configuration, \textit{FC}, \textit{AV} and \textit{NI} means \gls{me} with the corresponding descriptor, and \textit{AV\_NI} is the double archive test.}
+    \label{fig:resultsScoreMAPLE}
+\end{figure*}
+
+This section presents the results obtained during the study.
+Statistical significance of all results is assessed and detailed in Appendix~\ref{appendix:signifiance}, and used to compare the performances.
+\Cref{sec:Results_maple} describes how \gls{me} performed compared to the initial results obtained with \gls{maple} trained with classic Tournament selection.
+A comparative study is done in \Cref{sec:Results_comparison}, comparing \gls{maple}, to the deep \gls{rl} algorithms, \gls{ppo} and \gls{sac}.
+While focusing exclusively on the scores reached by the algorithm in this two first sections, \Cref{sec:Results_complexity} presents an analysis of the complexity of the solutions.
+
+\subsection{Performance results with MAP-Elites}
+\label{sec:Results_maple}
+
+
+\begin{figure*}[t]
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{data/mapleTraining/mapElitesBoxPlot.pdf}
+  \end{center}
+  \caption{Box plots of the score of each \gls{me} solution on each MuJoCo environment for 10 independent runs compared to the initial selection using tournament. \textit{TOURN} stands for tournament, meaning the initial \gls{maple} configuration, \textit{FC}, \textit{AV} and \textit{NI} means \gls{me} with the corresponding descriptor, and \textit{AV\_NI} is the double archive test.}
+  \label{fig:comparisonMAPElites}
+\end{figure*}
+
+
+
+Three descriptors, detailed in \Cref{sec:Setup_MapElites}, are tested with the \gls{me} algorithm~\cite{mapElites}: \acrfull{fc}, \acrfull{av} and \acrfull{ni}, as well as a fourth test using a double archive with descriptors \gls{av} and \gls{ni}.
+\Cref{fig:resultsScoreMAPLE} presents the results per generation of the training in the five MuJoCo environments.
+With the original tournament selection, \gls{maple} always converge to the final score in a maximum of 1000 generations.
+In contrast, using \gls{me} makes the convergence slower, but enable \gls{maple} to reach better results.
+Actually, in the original paper, \gls{maple} was trained respectively 3000 and 5000 generations on the \textit{ant} and the \textit{humanoid}, but the results of \gls{me} seems to be far from having finishing the training so we extended it to 5000 and 10000 generations.
+Even at this huge number of generation, the results still seems to be increasing.
+\Cref{fig:comparisonMAPElites} and \Cref{tab:comparisonResults} show the scores reached at the last training generation.
+
+For each environment and each descriptor, the results of \gls{me} are never worse than with Tournament selection, they are either better or the same with the same computation budget.
+This alone allows us to conclude that \gls{me} should be retained, since it never decreases the results.
+This claim depends also on the complexity, if \gls{me} was creating agent with bigger complexity, the claim could be invalid. 
+Thus it is discussed again in~\Cref{sec:Results_complexity}
+On the \textit{Hopper} and \textit{Walker2d}, the \gls{fc} and \gls{ni} descriptors achieve better results, as does as the double archive test, with a smaller deviation.
+All experiments on the \textit{Half Cheetah} achieve better results, with the \gls{av} descriptors reaching top scores.
+
+\subsubsection{Remarkable results on the \textit{Ant}}
+On the \textit{Ant}, all the experiments but one achieve the same results as the original test without \gls{me}.
+Only the training with the \gls{ni} descriptor achieved much better results, with half of the trainings reaching a score above 3000, while no other test has a single seed above.
+Being able to reach with consistency these impressive results shows a strong improvement thank to \gls{me}.
+
+\subsubsection{Remarkable results on the \textit{Humanoid}}
+The \textit{Humanoid} reward consists of three components: a reward for moving forward to the right, a penalty for applying excessive torques, and a 5-point reward per simulation step when the \textit{Humanoid} remains upright. 
+Over a thousand steps, a score of at least 5000 would indicate the task partially learned, reflecting the ability of the agent to keep the \textit{Humanoid} standing without falling. 
+To the best of our knowledge, no \gls{gp} studies have managed to learn to keep the \textit{Humanoid} standing even a single time on this task.
+With the \gls{av} descriptor, three out of the ten repetitions reached a score around 5000, and a last one reached a score of around 3000, while every other population never reached above 1500.
+Since the \textit{Humanoid} is a complex environment that has never been learned before by any \gls{gp} solution, these results are really encouraging toward the scalable capacities of \gls{maple}.
+Videos of the behavior achieved are available at~\cite{QVACHER_GECCO_2025}
+
+\subsubsection{Divergence of descriptors}
+The results obtained with the \textit{Ant} and the \textit{Humanoid} are really similar but also opposite, and show some issues with \gls{me}.
+They are similar because, in both cases, only a single descriptor managed to achieve outstanding results compared to every other solution, however two differences shows how opposite the results are:
+\begin{itemize}
+    \item A different descriptor reveals outstanding results. The tested environments are similar in the sense that they involve a locomotion task with continuous control, thus one could expect that the same descriptor is going to perform identically in every environment. This difference here shows that \gls{me} and the descriptor is really dependent to each task specifically.
+    \item The results on the double archive experiment is also different. For both environments, the double archive test involved two archives, one with the \gls{av} descriptor, one with the \gls{ni} descriptor. Since one environment learned with only the \gls{av} descriptor, and the other one only with the \gls{ni} descriptor, a similar result should be observed for the double archive. However, the double archive performs really well on the \textit{Humanoid} but performs normally on the \textit{Ant}, indicating that it is not a reliable solution.
+\end{itemize}
+From these two differences, the conclusion to draw is that \gls{me} has the ability to perform really well compared to classic selection algorithms like tournament selection, and never perform worse.
+However, the choice of the descriptor is really dependent on the task, and using a solution such as multiple archives to cover multiple descriptors is not enough.
+A genotypic descriptor has shown advantage for the \textit{Ant}, while a phenotypic descriptor improves \textit{Humanoid} performance.
+This statement encourages the research done on automatic detection of descriptors, with unsupervised discovery~\cite{grillotti2022unsupervised}, and when used in  \gls{gp} optimization, automatic detection of descriptors should include genotypic and phenotypic data.
+This claim is pushed with a former result obtained with \gls{tpg} in~\cite{8085186} founding that genotypic and phenotypic diversity maintenance are key components.
+
+\begin{figure*}[!ht]
+    \centering
+    \begin{subfigure}[b]{0.99\textwidth}
+        \includegraphics[width=\textwidth]{data/mapleTraining/QD-Score.pdf}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.99\textwidth}
+        \includegraphics[width=\textwidth]{data/mapleTraining/Coverage.pdf}
+    \end{subfigure}
+    \caption{QD-Score and Coverage of the archives with the different \gls{me} tests done on the environments. \textit{FC}, \textit{AV} and \textit{NI} indicates the descriptor used. \textit{DOUBLE\_AV} and \textit{DOUBLE\_NI} represent the QD-Score and Coverage for both archives used with the double archive test. Each curve is the average of the ten repetitions, with the shaded area representing the standard deviation.}
+    \label{fig:archiveAnalysis}
+\end{figure*}
+
+\subsubsection{Analysis of the archives}
+\Cref{fig:archiveAnalysis} presents how \gls{me} performs with two metrics: the QD-Score and the coverage.
+The QD-Score is the obtained by computing the sum of the scores of all the agents stored in the archive~\cite{pugh2015confronting}.
+The QD-Score could be wrongfully impacted by negative scores.
+It does not happen a lot in MuJoCo with how the reward mechanism is done, but to be sure, we decided to ignore the negative scores.
+The coverage shows the ratio of the archive filled compare to its size.
+This two metrics are measured on the three classic descriptors, and for the double archive, the metrics are computed on the both archives independently.
+
+The QD-Score of the \gls{fc} descriptor is the one converging faster and having usually the worse average results even when the scores of the best agent surpass some other descriptors, like in \textit{walker2d}.
+The \gls{ni} descriptor get the highest QD-Score, which is coherent by the fact that the diversity is on the genotype, allowing several agents in different cells to have similar behaviors. 
+While every curve tend to slowly reach a plateau, the curve of the double archive on the \textit{humanoid} reveal a huge breakthrough in the archive of \gls{ni} in the last thousand generation of the training.
+Because it is the \gls{av} descriptor that increase the results on the \textit{Humanoid}, we can hypothesized that for the double archive, the \gls{av} archive is also creating the initial breakthrough.
+The huge spike in the \gls{ni} descriptor curve is the consequence of those breakthrough in the \gls{av} archive.
+
+Concerning the coverage, both archives with \gls{ni} and \gls{av} descriptors are fully filled almost instantly, while it struggle more for the \gls{fc}, especially on the \textit{humanoid}, where it fills only half of it.
+It is again coherent that the archive is never fully filled for the \gls{fc} descriptor because it would mean flying on top of the ground. 
+Also on the \textit{humanoid}, since the results are really bad, it can be hypothized that the feet of the robot are mostly in contact with the ground.
+The double archive is also filled quickly, although is struggle more that \gls{ni} or \gls{av} descriptors alone, especially on the \textit{humanoid}.
+
+Video files showing the behavior of the best seed for \gls{maple} with \gls{me} on each environment are available at~\cite{QVACHER_MAPLE_MAPELITES}.
+\qv{I need to do the export of the videos and change this sentences probably.}
+On \textit{Ant} and \textit{Half Cheetah} a viable behavior, independent of the number of steps, is learned.
+On \textit{Walker 2D} and \textit{Hopper} a behavior is found, but sometimes with an overfitting on the number of steps.
+It can be observed that, in some of the ten independent runs, the agents try to fall or jump at 1000 steps in order to maximise the reward, even though this is not the desired behavior.
+
+
+\begin{table*}[]
+\centering
+\caption{The values presented are the average over the ten seeds of training, with the deviation in the brackets. \textit{tourn.} stands for tournament, meaning the initial \gls{maple} configuration, \textit{FC}, \textit{AV} and \textit{NI} means \gls{me} with the corresponding descriptor, and \textit{AV\_NI} is the double archive test. $\textbf{Maple}_{\textbf{all}}$ represents the score of \gls{maple} with the four \gls{me} tests group together. The bold values are the best values among all algorithms, while the italic values are the best values for \gls{maple} only.}
+\label{tab:comparisonResults}
+\begin{tabular}{@{}l|r|r|r|r|r@{}}
+\toprule
+Algorithm & \textit{Hopper} & \textit{Walker 2D} & \textit{Half Cheetah} & \textit{Ant} & \textit{Humanoid} \\
+\midrule
+$\text{Maple}_{\text{tourn.}}$ & $2013.6(481)$    & $2251.1(416)\ \  $ & $3827.6(408)\ \ $ & $2214.9(292)\ \ $ & $860.6(67)\ \ \ \ $ \\
+$\text{Maple}_{\text{FC}}$     & $2819.5(309)$   & $2490.9(421)\ \  $ & $4272.7(305)\ \ $ & $2076.9(146)\ \ $ & $963.9(82)\ \ \ \ $ \\
+$\text{Maple}_{\text{AV}}$     & $2162.5(424)$    & $2088.7(268)\ \  $ & $\textit{4586.8(290)}\ \ $ & $2043.8(258)\ \ $ & $\textit{2409.9(1839)}$ \\
+$\text{Maple}_{\text{NI}}$     & $2669.0(391)$    & $\textit{2635.9(340)\ \  }$ & $4264.7(243)\ \ $ & $\textit{3005.8(656)}\ \ $ & $1043.9(78)\ \ \ \ $ \\
+$\text{Maple}_{\text{AV\_NI}}$  & $\textbf{\textit{2845.5(493) }}$    & $2320.3(206)\ \  $ & $4363.5(503)\ \ $ & $2411.2(257)\ \ $ & $2203.34(1620)$ \\
+$\text{Maple}_{\text{all}}$    & $2624.1(443)$    & $2384.0(369)\ \  $ & $4379.2(359)\ \ $ & $2384.4(537)\ \ $ & $1655.3(1353)$ \\
+$\text{PPO}$                   & $1769.6(359)$    & $\textbf{2994.9(1615)}$     & $1931.4(418)\ \ $ & $\textbf{5048.4(721)}\ \ $ & $664.5(91)\ \ \ \ $ \\
+$\text{SAC}$                   & $2239.4(856)$    & $2904.4(954)\ \ $  & $ \textbf{5332.2(2525)}$ & $4253.3(1095)$  & $\textbf{6217.3(689)\ \ }$ \\
+
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Comparison performance with state-of-the-art}
+\label{sec:Results_comparison}
+
+\begin{figure*}[t]
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{data/mapleTraining/mainBoxPlot.pdf}
+  \end{center}
+  \caption{Box plots of the score of each algorithm on each MuJoCo environment for 10 independent runs. The value plotted is the average validation score over 20 episodes. \textit{TOURN} represents the score of \gls{maple} using the initial Tournament selection. \textit{ALL} represents the score of \gls{maple} with the four \gls{me} tests group togethers. \textit{BEST} represents the score of \gls{maple} using \gls{me} with the best descriptor of the environment.}
+  \label{fig:comparisonResults}
+\end{figure*}
+
+Boxplots in \Cref{fig:comparisonResults} show the distribution of rewards across 10 independent runs for the different \gls{gp} solutions as well as the two \gls{rl} solutions.
+\Cref{tab:comparisonResults} presents the same results with numeric values, showing the average and the deviation of the scores.
+\gls{maple} using \gls{me} is added with $Maple_{all}$ and $Maple_{best}$, representing respectively the average of the four \gls{me} tests and the best \gls{me} descriptor.
+
+On the comparison with deep \gls{rl}, \gls{maple} with \gls{me} scores better than \gls{ppo} on \textit{Hopper}, \textit{Half Cheetah} and \textit{Humanoid}.
+However, it is never significantly better than \gls{sac}, the \textit{Hopper} is the only environment where the average results are much better, but the statistical tests done in Appendix~\ref{appendix:signifiance} are inconclusive.
+On the \textit{Ant}, \gls{ppo} achieves better results than \gls{maple} with \gls{me}, however the results of the \gls{sac} are not good enough to statistically better than \gls{maple}, with a p-value of $0.008\ >\ 0.005$ and an effect size of $1.38\ <\  2.0$.
+To the best of our knowledge, it is the first time a \gls{gp} solution is able to reach statistical equality with a deep \gls{rl} solution on the \textit{Ant} environment of MuJoCo.
+Nevertheless, the deep \gls{rl} solutions still demonstrate a strong ability to learn the MuJoCo tasks compared to the \gls{gp} solution, especially the \textit{Humanoid} that is learned by the \gls{sac} with scores consistently above the best score reached by any \gls{gp} solution.
+
+
+\begin{table*}[]
+\centering
+\caption{Number of useful instructions for each tested solution on each MuJoCo environment. The deep \gls{rl} values are the number of \gls{mac} operations to compute, since they do not use instructions. The values presented are the average over the ten seeds of training, with the deviation in the brackets. 
+\textit{tourn.} stands for tournament, meaning the initial \gls{maple} configuration, \textit{FC}, \textit{AV} and \textit{NI} means \gls{me} with the corresponding descriptor, and \textit{AV\_NI} is the double archive test.
+\textit{all} represents the score of \gls{maple} using \gls{me} with any descriptor.}
+\label{tab:complexityComparison}
+\begin{tabular}{@{}l|r|r|r|r|r@{}}
+\toprule
+Algorithm & \textit{Hopper} & \textit{Walker 2D} & \textit{Half Cheetah} & \textit{Ant} & \textit{Humanoid} \\
+\midrule
+$\text{Maple}_{\text{tourn.}}$ & $8.0(2.9)$ & $14.9(4.9)$ & $15.4(5.3)$ & $20.8(3.6)$ & $31.2(3.4)$ \\
+$\text{Maple}_{\text{FC}}$ & $8.4(2.0)$ & $10.8(2.6)$ & $11.2(2.6)$ & $14.3(2.7)$ & $27.7(2.9)$ \\
+$\text{Maple}_{\text{AV}}$ & $5.3(1.8)$ & $9.1(1.6)$ & $9.7(1.9)$ & $13.2(3.1)$ & $27.3(5.1)$ \\
+$\text{Maple}_{\text{NI}}$ & $6.0(1.5)$ & $9.5(2.5)$ & $9.3(1.9)$ & $10.2(1.9)$ & $21.5(4.0)$ \\
+$\text{Maple}_{\text{AV\_NI}}$ & $6.2(1.6)$ & $8.4(2.5)$ & $8.1(1.5)$ & $10.2(1.9)$ & $24.5(3.7)$ \\
+$\text{Maple}_{\text{all}}$ & $6.5(2.0)$ & $9.5(2.4)$ & $9.6(2.2)$ & $9.2(2.4)$ & $25.3(4.6)$ \\
+$\text{PPO}$ & \(5 \cdot 10^4\ (0)\) & \(6 \cdot 10^4\ (0)\) & \(6 \cdot 10^4\ (0)\) & \(7 \cdot 10^4\ (0)\) & \(28 \cdot 10^4\ (0)\) \\
+$\text{SAC}$ & \(7 \cdot 10^5\ (0)\) & \(7 \cdot 10^5\ (0)\) & \(7 \cdot 10^5\ (0)\) & \(8 \cdot 10^5\ (0)\) & \(16 \cdot 10^5\ (0)\) \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+
+
+
+
+
+
+\subsection{Complexity analysis}
+\label{sec:Results_complexity}
+
+\Cref{tab:complexityComparison} sums up the complexity of each algorithm over each environment.
+The complexity for the \gls{gp} algorithms is the number of effective instructions in the model.
+For deep \gls{rl}, the complexity is the number of \gls{mac} operations in the model.
+As expected, the complexity increases for \gls{maple} when the number of actions increases.
+
+In the case of \gls{maple} when \gls{me} is used, thanks to the archive, multiple agents achieving high results can be identified.
+We consider that as \textit{best agents}, the agents within a population with a score above $0.95 \times max(scores)$, where $scores$ is the list of scores of all the agents of the population.
+Then, the agent with the smallest number of effective instructions within the \textit{best agents} is saved for a complexity comparison.
+The archive allows us to find different structures or behaviors with close results, and thus some with smaller complexity.
+Heading the attention on the \gls{maple} tests, it appears that \gls{me} consistently reduced the complexity.
+For the \gls{ni} descriptor, it is an expected results since the diversity is improved on the number of lines, and thus on the complexity.
+For the other descriptors, since multiple agents achieve high score with different diversity, some will use less lines than other, and thus naturally creates some agents with lower complexity.
+It has been claimed in \Cref{sec:Results_maple} that \gls{me} should be preferred because it never worsens the results; this claim can be reinforced thanks to its ability to reduce the complexity of the agents.
+
+\gls{ppo} and \gls{sac}, trained with two layers of respectively 64 and 256 hidden units are respectively two and three orders of magnitude bigger than \gls{maple}.
+Compared to deep \gls{rl}, \gls{maple} is able to reach better results than a deep \gls{rl} algorithm trained with a small network, which is still ten thousand time more complex than \gls{maple}.
+However, the \gls{sac} with a larger network, achieves comparable results on simpler task and outperforms \gls{maple} on the environments with a larger action dimension even if this is with a model larger by five orders of magnitude.
+
+
+\section{Interpretability}
+\label{sec:Interpretability}
+
+The interpretability of an AI allows to better understanding and explaining the process of decision making that the AI is taking.
+Interpretability covers different field of interest that we partially explore in this Section.
+\gls{gp} is known for creating agent with inherent interpretability, we confirm this ability in \Cref{sec:inter_inherent}, by expliciting the simplicity of the emergent models.
+Then the results obtained on the \textit{Ant} are focused in \Cref{sec:inter_feature}, showing how the best repetition converge toward a similar feature selection of the sensor inputs.
+Finally in \Cref{sec:inter_MapFeetContact}, the archive learned with using a different descriptor than \gls{fc} are mapped into the \gls{fc} archive, showing that the diversity improved in not similar between the different descriptors.
+
+\subsection{Inherent interpretability}
+\label{sec:inter_inherent}
+
+\gls{maple} coupled with \gls{me} enables the creation of high-performing agents with a small complexity. 
+Low complexity is more conducive to interpretability of the agents. 
+This section presents how accessible are the generated models, and how interpretable they are for \textit{Half Cheetah}, \textit{Ant} and \textit{Humanoid}.
+Videos of those three behaviors are available on~\cite{QVACHER_GECCO_2025}.
+
+The best policy of \gls{maple}, using \gls{me} with \gls{av} descriptor on the \textit{half cheetah} is shown in \Cref{algo:interpretability_hc}.
+This agents achieves an average score of around 5000 at the task, while containing only ten instructions. 
+Only six out of the seventeen inputs of the environments are used which are:
+\begin{itemize}
+    \item $i_3$: the angle of the back shin.
+    \item $i_7$, the angle of the front foot.
+    \item $i_8$, the velocity of the x-coordinate of the front tip.
+    \item $i_{10}$, the angular velocity of the front tip.
+    \item $i_{11}$, the angular velocity of the back thigh.
+    \item $i_{13}$, the angular velocity of the back foot.
+\end{itemize}
+Each action is independently used with only one or two different inputs, showing a strong ability to select exactly which inputs are needed for specific actions.
+
+To interpret the agents, one can simply look at a Program and explain what it is actually computing. 
+As an example, action $a_1$, representing the torque applied on the back shin rotor is the weighted difference of inputs $i_{11}$ and $i_8$.
+Thus, one can say: \textit{the torque applied on the back shin rotor is the difference between the the angular velocity of the back thigh and the velocity of the x-coordinate of the front tip}.
+An explanation by experts could then be done to explain this emergent behavior, explaining why this torque should be positive when the velocity of the x-coordinate of the front tip is higher than the angular velocity of the back thigh, and negative otherwise. 
+
+The exact same analysis can be done on the \textit{ant} and \textit{humanoid}, using the agents whose instructions are respectively detailed in \Cref{algo:interpretability_ant} and \Cref{algo:interpretability_humanoid}.
+The agent on the \textit{ant} achieves an average score of 3900 with only 16 instructions and using a third of the state inputs.
+The agent on the \textit{humanoid} achieves an average score of 5000 with only 19 instructions and using $6\%$ of the state inputs.
+For each of the three environments, the Programs controlling each action\removeit{s} are always really small, using in the worse case four instructions and four inputs, which is still fully interpretable.
+
+The emergent behaviors are similar to what is explored in~\cite{ramadan2022neuromuscular}, where it is said that locomotion tasks can be learned with small models comparable to spinal reflex, where the movement taken depends only on a few sensors and rely on rhythmic pattern generation.
+Here, on contrast with what could be learn with a neural networks, the tasks are learned with reflex-like behavior depending on a few sensors.
+
+\subsection{Specialized feature selection}
+\label{sec:inter_feature}
+\Cref{fig:featureSelection} lists the feature inputs used by the best agents of each of the 10 independent runs done with  \gls{maple} with \gls{me}, using the \gls{ni} descriptor on the \textit{Ant}, the scenario reaching best score with \gls{gp} in \Cref{sec:Results_comparison}.
+In this table, when an input is not used, it is blanked instead of writing \textit{zero} to visually see the feature selection. 
+This visualization shows a clear specification on the first half of the inputs. 
+In the \textit{Ant} environment, inputs $0$ to $12$ are position data and $13$ to $26$ are velocity data. 
+Thus, \gls{maple} is showing more importance to the position data rather than the velocity data. 
+
+The table also shows the difference between the input feature used by all the 10 runs, and used by only the four best runs reaching a score above $3000$. 
+Considering the 10 runs, only five inputs out of the 26 are never used by any run, this value rises to twelve when considering only the top runs, thus being almost half of the inputs ignored. 
+This results shows a more specialized feature selection done by the top best agents.
+
+\subsection{Lowering dimensions of the archives}
+\label{sec:inter_MapFeetContact}
+
+The archives with descriptors \gls{ni} and \gls{av} proved to be efficient on the MuJoCo tasks.
+However, this descriptors creates an archive with dimensions equals to the number of actions, which can hard to analysis visually. 
+In order get a hint on the improvement of the diversity, the on the walker2d with the different archives are mapped into the \gls{fc} archive.
+\cref{fig:archiveMapping} presents what are the portion of the \gls{fc} archive filled by the other descriptor at the end of the training with the seed number five.
+
+The \gls{av} fills $28\%$ of the archive while \gls{ni} only fills $1.4\%$, although it is \gls{ni} that performs the best on the \textit{walker2d}. 
+The difference in the coverage on the \gls{fc} reveal a strong difference in the diversity optimized by the different descriptors.
+Looking at the double archive, the \gls{av} and \gls{ni} archives respectively cover $24\%$ and $4.3\%$, and when combined, cover $25\%$, thus not showing an increasing of the coverage between merge archives and \gls{av} archive.
+However the \gls{ni} archive in the double archive covers a larger space thanks to the double archives.
+
+This analysis is extendable to the 10 trained seeds. 
+Appendix~\ref{appendix:AllMapping} shows the same results for every repetition of the walker2d.
+On average, on the 10 seeds, the \gls{av} descriptor covers $28\%$ of the \gls{fc} archive, while \gls{ni} covers $2.9\%$.
+For the double archive, the single \gls{av} and \gls{ni} cover respectively $27\%$ and $6.7\%$, and then $28\%$ when merged.
+Thus, the double archive only affect the coverage by making the \gls{ni} descriptor covering more of the \gls{fc} archive.
+\qv{tbh don't really know what's the point of this}\sk{I agree. This section seems underdeveloped}
+\qv{also, i could theorically map each of the archive in the two other descriptor, just to measure the coverage in each archive. I could do it for wlaker2d/hopper/half cheetah. For ant and humanoid i wasnt able to save ALL the agents in the archive considering the size of the archives}
+
+
+
+
+\begin{algorithm}[H]
+\caption{Best performing \gls{maple} agent on \textit{half cheetah}. Each line shows the action $a_i$ computed from inputs $i_j$.}
+\label{algo:interpretability_hc}
+\begin{algorithmic}[0]
+\State $a_0 \gets 2 \times \tan(i_3 \times 1.73)$
+\State $a_1 \gets i_{11} \times 0.19 - i_{8} \times 0.23$
+\State $a_2 \gets \exp(i_{11}) \times 0.13$
+\State $a_3 \gets -(i_{11} \times 0.86 + \log(i_{10} \times 0.68) \times 0.04)$
+\State $a_4 \gets \log(i_{13})$
+\State $a_5 \gets \tan(\tan(i_7 \times 1.17))$
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Best performing \gls{maple} agent on \textit{ant}. Each line shows the action $a_i$ computed from inputs $i_j$.}
+\label{algo:interpretability_ant}
+\begin{algorithmic}[0]
+\State $a_0 \gets i_4 \times 0.10 + i_{11} \times 0.24$
+\State $a_1 \gets \tan(i_6 \times -0.08)$
+\State $a_2 \gets (i_7 - \sin(i_5)) \times 0.33 + i_4 \times i_9 \times 1.89$
+\State $a_3 \gets i_9 \times 0.06 + i_{15} \times 0.01$
+\State $a_4 \gets i_0 \times 0.09$
+\State $a_5 \gets 0$
+\State $a_6 \gets \cos(i_{23} \times -0.26) \div i_{23} - i_9$
+\State $a_7 \gets i_0 \times 0.27 - i_9 \times 0.54$
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}[H]
+\caption{Best performing \gls{maple} agent on \textit{humanoid}. Each line shows the action $a_i$ computed from inputs $i_j$.}
+\label{algo:interpretability_humanoid}
+\begin{algorithmic}[0]
+\State $a_{0\ } \gets \tan(i_{124} \times 1.92)$
+\State $a_{1\ } \gets \exp(i_{154} \times -0.09)$
+\State $a_{2\ } \gets i_{191} - i_{222}$
+\State $a_{3\ } \gets i_{205} \times 0.07 - i_{221} \times 1.31$
+\State $a_{4\ } \gets \max(i_{31}\,\  i_{147})$
+\State $a_{5\ } \gets +\inf$
+\State $a_{6\ } \gets \log(i_{55})$
+\State $a_{7\ } \gets i_{229} - i_{93}$
+\State $a_{8\ } \gets i_{115}$
+\State $a_{9\ } \gets \exp(i_{191}) \div i_{334}$
+\State $a_{10} \gets \exp(i_{197} \times -0.34)$
+\State $a_{11} \gets i_{79} \times 0.96$
+\State $a_{12} \gets \tan(\max(i_{68}\,\  i_{118}))$
+\State $a_{13} \gets \sin(i_{102} \times 0.01)$
+\State $a_{14} \gets \max(i_{9}\,\  i_{24})$
+\State $a_{15} \gets -i_{115}$
+\State $a_{16} \gets \exp(i_{298} \times -0.21)$
+\end{algorithmic}
+\end{algorithm}
+
+
+
+\begin{figure*}[t]
+  \begin{center}
+    \includegraphics[width=0.99\textwidth]{data/mapleTraining/featureSelection.pdf}
+  \end{center}
+  \caption{Number of usage of each feature input from the \textit{Ant} environment by the best agent of each of the ten independent runs done with \gls{maple} with \gls{me}, using the \gls{ni} descriptor. The runs are ordered by score. The rows $\text{Unique\_\text{All}}$ and $\text{Unique\_}\geq{3000}$ refer respectively to the unique usage of an input by all the runs and by only the four runs achieving a score above 3000.}
+  \label{fig:featureSelection}
+\end{figure*}
+
+
+\begin{figure*}[!ht]
+    \centering
+    \begin{subfigure}[c]{0.17\textwidth} % Use [c] for vertical centering
+        \includegraphics[width=\textwidth]{data/mapleTraining/archive/archive_seed5_actionValues.pdf}
+    \end{subfigure}%
+    \hspace{0.01\textwidth}
+    \begin{subfigure}[c]{0.17\textwidth} % Use [c] for vertical centering
+        \includegraphics[width=\textwidth]{data/mapleTraining/archive/archive_seed5_nbInstr.pdf}
+    \end{subfigure}%
+    \hspace{0.05\textwidth}
+    \begin{subfigure}[c]{0.17\textwidth} % Use [c] for vertical centering
+        \includegraphics[width=\textwidth]{data/mapleTraining/archive/archive_seed5_doubleArchive_actionValues.pdf}
+    \end{subfigure}%
+    \hspace{0.005\textwidth}
+    \begin{subfigure}[c]{0.02\textwidth} % Use [c] for vertical centering
+        \includegraphics[width=\textwidth]{data/mapleTraining/archive/plusSign.pdf}
+    \end{subfigure}%
+    \hspace{0.005\textwidth}
+    \begin{subfigure}[c]{0.17\textwidth} % Use [c] for vertical centering
+        \includegraphics[width=\textwidth]{data/mapleTraining/archive/archive_seed5_doubleArchive_nbInstr.pdf}
+    \end{subfigure}%
+    \hspace{0.005\textwidth}
+    \begin{subfigure}[c]{0.02\textwidth} % Use [c] for vertical centering
+        \includegraphics[width=\textwidth]{data/mapleTraining/archive/equalSign.pdf}
+    \end{subfigure}%
+    \hspace{0.005\textwidth}
+    \begin{subfigure}[c]{0.17\textwidth} % Use [c] for vertical centering
+        \includegraphics[width=\textwidth]{data/mapleTraining/archive/archive_seed5_doubleArchive.pdf}
+    \end{subfigure}%
+    \caption{Coverage of the \gls{fc} archive on the \textit{Walker2d} by \gls{maple} trained with different descriptor for a specific repetition (the fifth one). First archive is the mapping of \gls{av} descriptor, second in \gls{ni}. The third and fourth one are the archives trained for the double archive tested, and the fifth is the merge of the this two archives.}
+    \label{fig:archiveMapping}
+\end{figure*}
+
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The \gls{maple} algorithm proposed in~\cite{vacher2025maple} has been extended in this work, first by simplifying its evolution and then by improving its diversity, using a quality-diversity algorithm: \acrlong{me}.
+\gls{me} is tested with three distinct descriptors: \gls{fc} focusing on behavioral diversity, \gls{av} focusing on phenotypic diversity and \gls{ni} focusing on genotypic diversity.
+\gls{me} proved to be always giving statistical equality or superiority compare to \gls{maple} with the initial evolution process, thus it should always be favoritized, independently of the descriptors.
+
+Interesting results happen on the two more complex environments: the \textit{Ant} and \textit{Humanoid}.
+For one specific descriptor, \gls{me} allows \gls{maple} to reach outstanding results, reaching scores of almost $4000$ on the \textit{Ant} and $5000$ on the \textit{Humanoid}, with models of only respectively $16$ and $19$ instructions.
+To the best of our knowledge, achieving this scores with model this simple is better than any solution in the state-of-the-art.
+
+However, this results, despite being really good, are achieved with different descriptors, because the \textit{Ant} results are achieved only with the \gls{ni} descriptor, focusing on genotypic diversity, and the \textit{Humanoid} only with the \gls{av} descriptor, focusing on phenotypic diversity.
+A test done with both this descriptor, learning while simultaneously filling two archives did not achieve as good results for both environments.
+Thus this study also reveals the importance of automatic detection of descriptors, field already explore in the literature.
+Furthermore, we insist on the importance of including phenotypic and genotypic data in the automatic detection of those descriptors, and not relying only on behavioral descriptors.
+
+\section*{\uppercase{Acknowledgements}}
+This research was funded, in whole or in part, by the Agence Nationale de la Recherche (ANR), grant ANR-22-CE25-0005-01. A CC BY license is applied to the AAM resulting from this submission, in accordance with  the open access conditions of the grant.
+
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{reference}
+
+\newpage
+\appendix
+\onecolumn
+
+\section{Number of action programs with initial Maple evolution}
+\label{appendix:nbActions}
+
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.99\textwidth]{data/mapleTraining/nbActionProgram.pdf}
+  \end{center}
+  \caption{The initial evolution process of \gls{maple} proposed in \cite{vacher2025maple} was relying on mutation to add and remove edges and thus action programs. This plots present the number of action programs used by the \gls{maple} agents in the initial proposition. The values presented are the average over ten seeds, with the shaded area corresponding to the standard deviation. On every environment, the number of action programs quickly converge to the number of actions of the task. The only exception where it does not fully converge to the number of actions is the \textit{Humanoid}. However since the task is not learn anyway, the evolution probably does not need all the actions on this task.}
+  \label{fig:nbActionPrograms}
+\end{figure}
+
+\section{Comparison between old and new evolution of Maple}
+\label{appendix:oldNewMaple}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.99\textwidth]{data/mapleTraining/oldNewMaple.pdf}
+  \end{center}
+  \caption{The initial evolution process of \gls{maple} proposed in \cite{vacher2025maple} was relying on mutation to add and remove edges and thus action programs. The values presented represents the distribution of the scores between the initial evolution of \gls{maple}, and the new evolution, with a fixed number of edges. The results are statistically equal on every environments.}
+  \label{fig:oldNewMaple}
+\end{figure}
+
+
+
+\section{Hyperparameters for \gls{maple}}
+\label{appendix:parameters}
+
+\begin{table}[H]
+\caption{
+Hyperparameters used to train the \gls{maple} solution.
+When crossing over two newly created vertices, $p_{cross}$ is the probability of crossing some edges. At least one edge is always crossed, then another is crossed with $p_{cross}$ probability
+$p_{mut}$ is the probability of mutating a random action program..
+$p_{swap}$ is the probability of swapping the actions programs.
+$p_{add\_line}$ and $p_{del\_line}$ are the probabilities of adding and removing a line to the Program, respectively.
+$p_{swap\_line}$ is the probability of swapping two lines in a Program.
+$p_{mutate\_constant}$ is the probability of mutating a constant in the Program and $p_{mutate\_constant\_sign}$ is the probability of mutating the sign of a mutated constant.
+}
+\centering
+\label{tab:Hyperparamters}
+\begin{tabular}{@{\hspace{0.5cm}}l@{\hspace{1cm}}||@{\hspace{0.5cm}}l@{\hspace{0.5cm}}}
+\toprule
+\textbf{Hyperparameter} & \textbf{Value}  \\
+\midrule
+
+
+Number of Agents & $1000$\\
+$p_{cross}$ & $0.7$\\
+$p_{mut}$ & $0.5$\\
+$p_{swap}$ & $0.1$\\
+number of registers & $8$\\
+\midrule
+\multicolumn{2}{c}{Program mutations} \\
+\midrule
+Init. Program Size & $10$\\
+Max Program Size & $20$\\
+$p_{add\_line}$ & $0.9$\\
+$p_{del\_line}$ & $0.5$\\
+$p_{swap\_lines}$ & $1.0$\\
+$p_{mutate\_constant}$ & $0.5$\\
+$p_{mutate\_constant\_sign}$ & $0.1$\\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Statistical significance of the experimental results}
+\label{appendix:signifiance}
+
+Statistical significance is assessed following prior work~\cite{significance}, using a two-tailed Welch’s $t$-test~\cite{welch}, which is appropriate for small samples with unequal variances.
+With $N=10$ independent runs per method, we apply a Bonferroni correction to control the family-wise error rate, yielding an adjusted significance threshold of $\alpha_{\text{corr}} = 0.005$. P-values are indicates in~\Cref{fig:pvalues}
+Practical significance is measured using Cohen’s $d$, detailed in~\Cref{fig:effectiveSize}, and, we consider $d > 2$ to indicate a sufficiently large effect under limited-run settings.
+
+This test only indicates the probability that one solution is better than another, so a single well-performing result might occur due to randomness.
+For example, on the \textit{Ant} environment, the double archive appears better than the \gls{av} descriptor alone.
+Here, the p-value is $0.05$ and the effect size is $1.43$, indicating a moderately large effect.
+However, since this difference is observed only once between these two \gls{me} tests on this particular environment, it could be due to chance.
+To confirm the significance of this result, both methods would need to be retrained on 10 new seeds and compared again.
+By contrast, when results are consistently better, significance is more robust.
+For example, \gls{sac} outperforms every other algorithm on the \textit{Humanoid}, and thus the confidence in much higher.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.99\textwidth]{data/mapleTraining/pvalues.pdf}
+  \end{center}
+  \caption{Welch's $t$-test results. $\alpha_{\text{corr}} = 0.005$ with Bonferroni correction ($N=10$). A P-value in green mean that the value on the Y-axis is better than the one on the X-axis. P-Values in red are the opposite.}
+  \label{fig:pvalues}
+\end{figure}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.99\textwidth]{data/mapleTraining/effectiveSize.pdf}
+  \end{center}
+  \caption{Cohen's effect size $d > 2$ indicates a very large effect.}
+  \label{fig:effectiveSize}
+\end{figure}
+
+\section{Mapping on every \gls{av} and \gls{ni} results into \gls{fc} archives on \textit{Walker2d}}
+\label{appendix:AllMapping}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.99\textwidth]{data/mapleTraining/archive/archive_allSeeds_actionValues.pdf}
+  \end{center}
+  \caption{Coverage of the \gls{fc} archive on the \textit{Walker2d} by \gls{maple} trained with the \gls{av} descriptor for each of the ten repetitions.}
+\end{figure}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.99\textwidth]{data/mapleTraining/archive/archive_allSeeds_nbInstr.pdf}
+  \end{center}
+  \caption{Coverage of the \gls{fc} archive on the \textit{Walker2d} by \gls{maple} trained with the \gls{ni} descriptor for each of the ten repetitions.}
+\end{figure}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.99\textwidth]{data/mapleTraining/archive/archive_allSeeds_doubleArchive_actionValues.pdf}
+  \end{center}
+  \caption{Coverage of the \gls{fc} archive on the \textit{Walker2d} by \gls{maple} trained with the double archive, but plotting the agent from the \gls{av} archive for each of the ten repetitions.}
+\end{figure}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.99\textwidth]{data/mapleTraining/archive/archive_allSeeds_doubleArchive_nbInstr.pdf}
+  \end{center}
+  \caption{Coverage of the \gls{fc} archive on the \textit{Walker2d} by \gls{maple} trained with the double archive, but plotting the agent from the \gls{ni} archive for each of the ten repetitions.}
+\end{figure}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.99\textwidth]{data/mapleTraining/archive/archive_allSeeds_doubleArchive.pdf}
+  \end{center}
+  \caption{Coverage of the \gls{fc} archive on the \textit{Walker2d} by \gls{maple} trained with the double archive for each of the ten repetitions.}
+\end{figure}
+
+
+\end{document}
+\endinput

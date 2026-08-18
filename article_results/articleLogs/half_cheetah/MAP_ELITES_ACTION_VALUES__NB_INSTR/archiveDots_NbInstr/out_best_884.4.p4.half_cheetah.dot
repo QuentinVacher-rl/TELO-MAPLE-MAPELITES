@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:34:58
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1967381 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P1842157 [fillcolor="#cccccc" shape=point label="1"] //-0.002626|-0.561479|-0.116157|-1.026650|-0.348529|-0.800067|-0.297592|-0.653160|-0.900964|0.939989|
+		I1842157 [shape=box style=invis label="3|0&2|11#0|12#1|4#0|14&#92;n"] 
+		P1842157 -> I1842157[style=invis]
+		A1967381 -> P1842157
+		P2021404 [fillcolor="#cccccc" shape=point label="1"] //0.424180|0.380511|0.708466|0.125639|-0.550334|-0.537049|0.608924|0.211265|-0.000534|0.046642|
+		I2021404 [shape=box style=invis label="11|0&2|2#2|11#1|15#1|1&#92;n"] 
+		P2021404 -> I2021404[style=invis]
+		A1967381 -> P2021404
+		P2529471 [fillcolor="#cccccc" shape=point label="1"] //0.532520|0.609906|0.331073|-1.525687|-0.862809|0.791135|0.826272|0.179424|0.011595|0.221136|
+		I2529471 [shape=box style=invis label="14|0&2|3#0|11#1|1#0|4&#92;n"] 
+		P2529471 -> I2529471[style=invis]
+		A1967381 -> P2529471
+		P2245160 [fillcolor="#cccccc" shape=point label="1"] //0.184281|-0.205248|0.976525|0.052643|-0.538783|-0.164563|0.531915|-0.609631|0.634946|0.852244|
+		I2245160 [shape=box style=invis label="13|0&2|0#2|11#1|8#0|14&#92;n"] 
+		P2245160 -> I2245160[style=invis]
+		A1967381 -> P2245160
+		P2416488 [fillcolor="#cccccc" shape=point label="1"] //-1.008212|-0.305444|-0.851043|0.269904|0.274432|0.907920|-0.555459|-0.274830|0.791574|1.373161|
+		I2416488 [shape=box style=invis label="11|0&2|11#2|1#1|11#1|12&#92;n"] 
+		P2416488 -> I2416488[style=invis]
+		A1967381 -> P2416488
+		P2067722 [fillcolor="#cccccc" shape=point label="1"] //0.088209|-0.989322|0.437991|0.455458|1.897147|0.692258|0.581779|-0.350141|-0.095621|0.999541|
+		I2067722 [shape=box style=invis label="0|0&2|6#2|7#1|13#2|16&#92;n"] 
+		P2067722 -> I2067722[style=invis]
+		A1967381 -> P2067722
+}

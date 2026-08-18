@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 04:06:17
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1933861 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P1992671 [fillcolor="#cccccc" shape=point label="1"] //0.904253|-1.482545|-0.211120|0.192446|-1.021033|0.235394|-0.529043|-0.489681|-0.010039|-0.510501|
+		I1992671 [shape=box style=invis label="0|0&2|11#2|6#1|12#1|10&#92;n"] 
+		P1992671 -> I1992671[style=invis]
+		A1933861 -> P1992671
+		P2451001 [fillcolor="#cccccc" shape=point label="1"] //0.545339|-0.965104|-0.043297|0.842496|-0.435996|-0.388889|-0.339526|0.600512|0.902223|-0.801647|
+		I2451001 [shape=box style=invis label="6|0&2|2#0|5#2|6#1|7&#92;n"] 
+		P2451001 -> I2451001[style=invis]
+		A1933861 -> P2451001
+		P2451000 [fillcolor="#cccccc" shape=point label="1"] //0.513579|-0.422356|-0.446652|0.319584|0.532558|0.106204|-0.483988|-0.890893|0.775744|0.632909|
+		I2451000 [shape=box style=invis label="16|0&2|3#1|2#2|8#0|0&#92;n"] 
+		P2451000 -> I2451000[style=invis]
+		A1933861 -> P2451000
+		P2055319 [fillcolor="#cccccc" shape=point label="1"] //-0.373069|0.138147|-0.605358|0.590429|0.534431|-0.837271|-0.031947|-0.060562|0.165617|-0.771561|
+		I2055319 [shape=box style=invis label="7|0&2|9#1|11#2|0#0|6&#92;n6|0&0|16#1|3#1|12#0|7&#92;n"] 
+		P2055319 -> I2055319[style=invis]
+		A1933861 -> P2055319
+		P2486134 [fillcolor="#cccccc" shape=point label="1"] //-0.438294|-0.196140|0.514251|-0.957207|0.244349|0.617590|-0.200665|-1.577781|-1.183944|0.174651|
+		I2486134 [shape=box style=invis label="8|0&2|3#1|7#0|2#1|1&#92;n"] 
+		P2486134 -> I2486134[style=invis]
+		A1933861 -> P2486134
+		P1866088 [fillcolor="#cccccc" shape=point label="1"] //0.377223|-0.932543|0.162476|-0.184884|-0.170124|0.189560|0.181532|-0.209145|0.084606|-0.537792|
+		I1866088 [shape=box style=invis label=""] 
+		P1866088 -> I1866088[style=invis]
+		A1933861 -> P1866088
+}

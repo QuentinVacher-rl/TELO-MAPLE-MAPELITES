@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:08:03
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1954553 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P1272741 [fillcolor="#cccccc" shape=point label="1"] //0.794759|-0.147610|0.114994|0.124729|0.836744|0.811267|-0.269845|0.122226|-0.904199|-0.768723|
+		I1272741 [shape=box style=invis label="5|0&2|8#0|16#2|6#2|8&#92;n"] 
+		P1272741 -> I1272741[style=invis]
+		A1954553 -> P1272741
+		P2338328 [fillcolor="#cccccc" shape=point label="1"] //-0.108812|0.993887|0.515297|0.103663|-0.764139|-0.091199|-0.464955|-0.473348|0.764232|0.283991|
+		I2338328 [shape=box style=invis label="12|0&2|11#2|5#1|5#1|16&#92;n"] 
+		P2338328 -> I2338328[style=invis]
+		A1954553 -> P2338328
+		P1380946 [fillcolor="#cccccc" shape=point label="1"] //-0.054100|-0.255176|0.260131|0.761050|0.696356|-0.785025|1.702893|0.402754|0.176189|-0.702619|
+		I1380946 [shape=box style=invis label="15|0&2|16#1|15#0|7#1|13&#92;n"] 
+		P1380946 -> I1380946[style=invis]
+		A1954553 -> P1380946
+		P1667255 [fillcolor="#cccccc" shape=point label="1"] //-0.557542|-0.035945|0.752505|-0.963324|0.305669|0.597623|-0.613146|0.927720|-0.669444|0.210861|
+		I1667255 [shape=box style=invis label="12|0&2|14#2|4#1|10#1|8&#92;n"] 
+		P1667255 -> I1667255[style=invis]
+		A1954553 -> P1667255
+		P2512680 [fillcolor="#cccccc" shape=point label="1"] //-0.553856|0.496067|-0.515216|-0.712803|0.607356|-0.750676|0.325037|-0.285870|0.658477|-0.521808|
+		I2512680 [shape=box style=invis label="12|0&2|10#2|14#1|9#1|16&#92;n"] 
+		P2512680 -> I2512680[style=invis]
+		A1954553 -> P2512680
+		P2414340 [fillcolor="#cccccc" shape=point label="1"] //0.370143|0.997753|0.690980|-0.882009|-0.935545|1.180018|1.386683|1.304976|-1.123200|-2.033765|
+		I2414340 [shape=box style=invis label="1|0&2|4#2|5#1|16#1|5&#92;n"] 
+		P2414340 -> I2414340[style=invis]
+		A1954553 -> P2414340
+}

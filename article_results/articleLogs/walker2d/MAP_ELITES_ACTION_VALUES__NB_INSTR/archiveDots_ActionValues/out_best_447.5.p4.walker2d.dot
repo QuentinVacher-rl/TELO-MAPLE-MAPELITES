@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:29:51
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1832043 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2106585 [fillcolor="#cccccc" shape=point label="1"] //0.900423|-0.854022|-0.764163|-0.818193|1.277164|-0.856437|0.198480|-0.706951|-0.023916|0.214923|
+		I2106585 [shape=box style=invis label="15|0&2|4#1|1#1|11#1|8&#92;n"] 
+		P2106585 -> I2106585[style=invis]
+		A1832043 -> P2106585
+		P2039525 [fillcolor="#cccccc" shape=point label="1"] //0.059749|-0.436218|0.257147|-0.631845|-0.940097|0.774543|0.711418|0.349704|-0.631498|-0.985793|
+		I2039525 [shape=box style=invis label="5|0&2|3#2|9#2|11#1|12&#92;n"] 
+		P2039525 -> I2039525[style=invis]
+		A1832043 -> P2039525
+		P1442868 [fillcolor="#cccccc" shape=point label="1"] //-0.540363|-0.039818|-0.843718|-0.726878|0.439370|-0.597305|-0.330823|0.661598|-0.644129|-1.595368|
+		I1442868 [shape=box style=invis label="15|0&2|7#1|16#0|16#1|9&#92;n"] 
+		P1442868 -> I1442868[style=invis]
+		A1832043 -> P1442868
+		P2355182 [fillcolor="#cccccc" shape=point label="1"] //-0.329520|1.050991|0.873759|-0.985787|-0.696485|0.913052|0.638861|-0.417081|0.680374|0.995516|
+		I2355182 [shape=box style=invis label="11|0&2|4#2|14#1|4#1|16&#92;n"] 
+		P2355182 -> I2355182[style=invis]
+		A1832043 -> P2355182
+		P1482690 [fillcolor="#cccccc" shape=point label="1"] //-0.006557|-0.674988|-1.204904|-0.090476|-0.972286|-0.990729|0.076802|0.924648|0.416088|0.572247|
+		I1482690 [shape=box style=invis label="7|0&2|0#0|4#1|0#2|12&#92;n"] 
+		P1482690 -> I1482690[style=invis]
+		A1832043 -> P1482690
+		P2215643 [fillcolor="#cccccc" shape=point label="1"] //-0.020032|0.729855|-0.771880|-0.838667|0.191351|0.761776|-0.844513|-0.027666|-0.623504|0.174063|
+		I2215643 [shape=box style=invis label="0|0&0|15#2|6#1|2#1|1&#92;n"] 
+		P2215643 -> I2215643[style=invis]
+		A1832043 -> P2215643
+}

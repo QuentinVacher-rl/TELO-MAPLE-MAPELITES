@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:34:43
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1702984 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P1921359 [fillcolor="#cccccc" shape=point label="1"] //-0.002626|-0.561479|-0.079761|-1.026650|-0.348529|-0.800067|-0.297592|-0.438025|-0.900964|0.939989|
+		I1921359 [shape=box style=invis label="3|0&2|11#0|12#1|4#0|14&#92;n"] 
+		P1921359 -> I1921359[style=invis]
+		A1702984 -> P1921359
+		P2046302 [fillcolor="#cccccc" shape=point label="1"] //0.659596|-0.861134|0.910434|0.491029|0.912225|0.699581|0.143487|0.525691|-0.731886|-0.166385|
+		I2046302 [shape=box style=invis label="14|0&0|0#0|8#1|11#1|7&#92;n"] 
+		P2046302 -> I2046302[style=invis]
+		A1702984 -> P2046302
+		P1731465 [fillcolor="#cccccc" shape=point label="1"] //0.257776|0.794869|0.949640|-0.093590|0.542082|0.849529|0.528636|-0.482492|0.711171|0.164275|
+		I1731465 [shape=box style=invis label="8|0&2|3#1|10#1|9#0|5&#92;n"] 
+		P1731465 -> I1731465[style=invis]
+		A1702984 -> P1731465
+		P1062463 [fillcolor="#cccccc" shape=point label="1"] //0.174002|0.868144|0.514899|0.056068|-0.564215|0.032524|-0.211196|-0.429642|-0.210498|0.613011|
+		I1062463 [shape=box style=invis label="8|0&2|1#2|14#0|14#1|1&#92;n"] 
+		P1062463 -> I1062463[style=invis]
+		A1702984 -> P1062463
+		P1895971 [fillcolor="#cccccc" shape=point label="1"] //-0.568362|0.315607|0.250604|0.125989|0.718434|-0.241590|-0.350930|-0.538444|-0.068612|0.695761|
+		I1895971 [shape=box style=invis label="12|0&2|10#2|1#1|3#1|1&#92;n"] 
+		P1895971 -> I1895971[style=invis]
+		A1702984 -> P1895971
+		P2190328 [fillcolor="#cccccc" shape=point label="1"] //0.718563|0.546072|0.294898|-0.662897|0.363693|0.410399|0.587486|-0.060238|0.236295|-0.538810|
+		I2190328 [shape=box style=invis label="16|0&2|10#1|1#0|3#1|11&#92;n"] 
+		P2190328 -> I2190328[style=invis]
+		A1702984 -> P2190328
+}

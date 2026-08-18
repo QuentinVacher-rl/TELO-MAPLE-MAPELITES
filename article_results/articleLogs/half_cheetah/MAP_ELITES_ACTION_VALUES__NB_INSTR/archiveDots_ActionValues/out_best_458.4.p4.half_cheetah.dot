@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:32:57
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1990082 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2405853 [fillcolor="#cccccc" shape=point label="1"] //-0.002626|-0.500306|-0.079761|-1.026650|-0.348529|-0.800067|-0.297592|-0.730580|-0.900964|0.939989|
+		I2405853 [shape=box style=invis label="3|0&2|11#0|12#1|8#0|14&#92;n"] 
+		P2405853 -> I2405853[style=invis]
+		A1990082 -> P2405853
+		P1612597 [fillcolor="#cccccc" shape=point label="1"] //0.424180|0.355375|0.708466|0.125639|-0.550334|-0.537049|0.608924|0.211265|-0.000534|0.046642|
+		I1612597 [shape=box style=invis label="11|0&2|2#2|11#1|15#1|1&#92;n"] 
+		P1612597 -> I1612597[style=invis]
+		A1990082 -> P1612597
+		P2298019 [fillcolor="#cccccc" shape=point label="1"] //0.257776|0.794869|0.949640|-0.054813|-0.518561|0.849529|0.543781|-0.456588|0.711171|0.164275|
+		I2298019 [shape=box style=invis label="8|0&2|3#1|15#1|9#0|5&#92;n"] 
+		P2298019 -> I2298019[style=invis]
+		A1990082 -> P2298019
+		P944955 [fillcolor="#cccccc" shape=point label="1"] //0.184281|-0.205248|0.976525|0.052643|-0.538783|-0.164563|0.531915|-0.609631|0.634946|0.852244|
+		I944955 [shape=box style=invis label="13|0&2|0#2|11#1|8#0|14&#92;n"] 
+		P944955 -> I944955[style=invis]
+		A1990082 -> P944955
+		P2298018 [fillcolor="#cccccc" shape=point label="1"] //-1.008212|-0.305444|-0.851043|0.273331|0.274432|0.907920|-0.555459|-0.423448|0.768628|2.393728|
+		I2298018 [shape=box style=invis label="11|0&2|11#2|1#1|11#1|1&#92;n"] 
+		P2298018 -> I2298018[style=invis]
+		A1990082 -> P2298018
+		P2558647 [fillcolor="#cccccc" shape=point label="1"] //-0.001268|-0.233973|0.630142|-0.335352|0.408005|0.715490|-0.006015|-0.247201|0.311232|0.426824|
+		I2558647 [shape=box style=invis label="9|0&2|6#0|10#0|15#1|5&#92;n"] 
+		P2558647 -> I2558647[style=invis]
+		A1990082 -> P2558647
+}

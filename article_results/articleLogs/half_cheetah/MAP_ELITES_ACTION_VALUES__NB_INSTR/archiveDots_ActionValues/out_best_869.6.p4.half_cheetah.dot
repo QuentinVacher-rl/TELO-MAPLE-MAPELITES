@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:19:37
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1854061 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P332177 [fillcolor="#cccccc" shape=point label="1"] //0.000929|0.740127|-0.627886|-0.654736|-0.480199|0.662014|0.872061|-0.486145|0.363227|0.025992|
+		I332177 [shape=box style=invis label="5|0&2|5#2|9#1|7#0|9&#92;n"] 
+		P332177 -> I332177[style=invis]
+		A1854061 -> P332177
+		P1199192 [fillcolor="#cccccc" shape=point label="1"] //-0.375142|-0.037267|0.034774|-0.047190|-0.543568|-0.685006|0.586156|0.050333|-0.520970|-0.408191|
+		I1199192 [shape=box style=invis label="12|5&2|5#2|2#1|6#1|7&#92;n4|0&2|14#0|13#0|6#0|10&#92;n"] 
+		P1199192 -> I1199192[style=invis]
+		A1854061 -> P1199192
+		P2384150 [fillcolor="#cccccc" shape=point label="1"] //-0.265855|-0.608130|0.074609|-0.135604|-0.583790|-0.928079|-0.168514|0.546000|-1.326374|-1.730265|
+		I2384150 [shape=box style=invis label="0|0&2|9#2|4#0|8#2|2&#92;n"] 
+		P2384150 -> I2384150[style=invis]
+		A1854061 -> P2384150
+		P966 [fillcolor="#cccccc" shape=point label="1"] //0.291200|0.510208|0.263925|-0.157090|-0.012976|0.607639|-0.748806|-0.848953|0.803067|0.786949|
+		I966 [shape=box style=invis label="7|7&2|4#1|15#0|12#0|2&#92;n2|0&2|10#0|15#1|11#2|10&#92;n"] 
+		P966 -> I966[style=invis]
+		A1854061 -> P966
+		P995301 [fillcolor="#cccccc" shape=point label="1"] //-0.898784|-0.409782|-0.039810|0.511965|0.749446|0.170838|-0.216425|0.702377|1.442148|-0.265673|
+		I995301 [shape=box style=invis label="18|0&2|6#1|4#2|1#1|14&#92;n"] 
+		P995301 -> I995301[style=invis]
+		A1854061 -> P995301
+		P2384151 [fillcolor="#cccccc" shape=point label="1"] //-1.594363|-1.023581|0.069585|-0.616316|0.515441|-0.683867|0.698200|0.473982|0.175352|0.479385|
+		I2384151 [shape=box style=invis label="0|0&0|0#2|3#1|15#0|1&#92;n"] 
+		P2384151 -> I2384151[style=invis]
+		A1854061 -> P2384151
+}

@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 02:28:20
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1012670 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P982313 [fillcolor="#cccccc" shape=point label="1"] //0.078581|-0.889983|-0.817695|-0.391536|0.636177|-0.380321|0.959945|0.814917|0.561015|0.806411|
+		I982313 [shape=box style=invis label="11|0&0|12#2|10#1|8#1|10&#92;n"] 
+		P982313 -> I982313[style=invis]
+		A1012670 -> P982313
+		P1662 [fillcolor="#cccccc" shape=point label="1"] //0.390284|0.633050|-0.753374|-0.512244|0.150351|0.021551|-0.013298|-0.508540|0.973416|0.355263|
+		I1662 [shape=box style=invis label=""] 
+		P1662 -> I1662[style=invis]
+		A1012670 -> P1662
+		P845297 [fillcolor="#cccccc" shape=point label="1"] //0.176800|-0.313074|-1.206871|-0.957441|0.893022|-0.547914|0.628140|-0.119141|-0.998607|0.250977|
+		I845297 [shape=box style=invis label="12|0&2|15#0|10#1|1#1|1&#92;n"] 
+		P845297 -> I845297[style=invis]
+		A1012670 -> P845297
+		P1303462 [fillcolor="#cccccc" shape=point label="1"] //0.203183|-0.636331|-0.476066|-0.755429|1.018694|-0.301775|0.681889|-0.893307|0.373334|0.293361|
+		I1303462 [shape=box style=invis label="6|0&2|16#2|16#2|13#2|4&#92;n"] 
+		P1303462 -> I1303462[style=invis]
+		A1012670 -> P1303462
+		P1096797 [fillcolor="#cccccc" shape=point label="1"] //0.823696|-0.678080|0.556386|0.043295|0.787625|-0.302388|-0.510774|1.179671|-0.523327|-0.767275|
+		I1096797 [shape=box style=invis label=""] 
+		P1096797 -> I1096797[style=invis]
+		A1012670 -> P1096797
+		P159545 [fillcolor="#cccccc" shape=point label="1"] //0.892559|0.931160|-0.265169|-0.132103|-0.161915|-0.025826|-0.432867|-0.673088|-0.227041|0.503073|
+		I159545 [shape=box style=invis label="15|2&2|4#1|16#1|12#0|3&#92;n9|4&0|2#1|13#1|9#1|13&#92;n1|1&0|12#0|13#0|9#2|13&#92;n2|0&2|0#0|9#0|11#0|13&#92;n"] 
+		P159545 -> I159545[style=invis]
+		A1012670 -> P159545
+}

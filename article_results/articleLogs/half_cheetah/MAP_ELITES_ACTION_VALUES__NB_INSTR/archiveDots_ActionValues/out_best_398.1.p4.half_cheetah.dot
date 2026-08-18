@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:07:13
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1837783 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P1609584 [fillcolor="#cccccc" shape=point label="1"] //0.319167|-0.835097|-0.804254|-0.471305|-0.136825|-0.540379|0.511868|-0.963682|0.662057|-0.356209|
+		I1609584 [shape=box style=invis label="10|0&2|4#2|5#2|3#2|13&#92;n"] 
+		P1609584 -> I1609584[style=invis]
+		A1837783 -> P1609584
+		P488971 [fillcolor="#cccccc" shape=point label="1"] //-0.902534|0.653739|-0.089234|-0.558958|-0.567708|-0.636900|-0.958571|0.607905|0.995866|-0.227427|
+		I488971 [shape=box style=invis label="11|0&2|2#2|7#1|7#1|5&#92;n"] 
+		P488971 -> I488971[style=invis]
+		A1837783 -> P488971
+		P1106247 [fillcolor="#cccccc" shape=point label="1"] //-0.500045|0.493203|-1.963114|-0.772046|-0.375569|-0.093182|0.234119|-0.137308|-0.261204|1.070527|
+		I1106247 [shape=box style=invis label="18|0&2|16#1|15#0|13#1|12&#92;n"] 
+		P1106247 -> I1106247[style=invis]
+		A1837783 -> P1106247
+		P2362453 [fillcolor="#cccccc" shape=point label="1"] //0.421819|0.115312|0.214850|0.348063|-0.483648|0.034240|-0.343579|0.831750|-0.096131|-0.595637|
+		I2362453 [shape=box style=invis label="0|0&0|9#2|6#1|10#0|4&#92;n"] 
+		P2362453 -> I2362453[style=invis]
+		A1837783 -> P2362453
+		P2162131 [fillcolor="#cccccc" shape=point label="1"] //-1.991768|-0.467207|0.137643|0.776823|-1.268745|-0.198812|-0.758982|-0.400030|-0.197405|0.720112|
+		I2162131 [shape=box style=invis label="0|0&0|0#2|16#0|12#1|2&#92;n"] 
+		P2162131 -> I2162131[style=invis]
+		A1837783 -> P2162131
+		P1732239 [fillcolor="#cccccc" shape=point label="1"] //0.323953|-0.439974|0.334806|-0.708023|0.863801|0.862166|-0.520818|0.929097|0.247002|0.359561|
+		I1732239 [shape=box style=invis label="11|0&2|5#0|0#1|12#1|11&#92;n"] 
+		P1732239 -> I1732239[style=invis]
+		A1837783 -> P1732239
+}

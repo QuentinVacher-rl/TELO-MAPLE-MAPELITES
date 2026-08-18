@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 04:06:08
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1866060 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P145247 [fillcolor="#cccccc" shape=point label="1"] //0.154218|0.970307|-0.259396|-0.260152|-0.660218|-0.549393|0.578025|-0.572416|0.795637|0.649422|
+		I145247 [shape=box style=invis label="4|0&2|6#2|3#2|8#0|7&#92;n"] 
+		P145247 -> I145247[style=invis]
+		A1866060 -> P145247
+		P839180 [fillcolor="#cccccc" shape=point label="1"] //-0.770433|-0.097011|0.820679|0.083254|-0.172078|0.620857|-0.370312|-0.014401|0.073162|-0.120418|
+		I839180 [shape=box style=invis label="18|0&2|11#1|9#1|15#1|4&#92;n"] 
+		P839180 -> I839180[style=invis]
+		A1866060 -> P839180
+		P775 [fillcolor="#cccccc" shape=point label="1"] //-0.842676|0.677556|0.122793|-0.247344|-0.192856|0.458743|0.150435|-0.811102|0.455983|0.368335|
+		I775 [shape=box style=invis label="4|0&2|14#2|9#2|12#2|13&#92;n"] 
+		P775 -> I775[style=invis]
+		A1866060 -> P775
+		P1232124 [fillcolor="#cccccc" shape=point label="1"] //-0.016885|-0.693588|-0.066718|0.378441|-0.407703|0.859995|-0.286123|-0.874628|-0.572026|0.877270|
+		I1232124 [shape=box style=invis label="16|0&2|13#1|16#2|7#2|2&#92;n"] 
+		P1232124 -> I1232124[style=invis]
+		A1866060 -> P1232124
+		P2399527 [fillcolor="#cccccc" shape=point label="1"] //-0.016885|-0.693588|-0.066718|0.536241|-0.407703|0.612900|-0.555804|-0.874628|-0.291521|0.981749|
+		I2399527 [shape=box style=invis label="16|0&2|13#1|16#2|7#0|2&#92;n"] 
+		P2399527 -> I2399527[style=invis]
+		A1866060 -> P2399527
+		P2241064 [fillcolor="#cccccc" shape=point label="1"] //-0.356314|0.088036|0.158976|-0.530065|0.769973|-0.344204|-0.472540|-0.106829|-0.019503|0.225482|
+		I2241064 [shape=box style=invis label="19|3&0|2#1|8#1|8#1|2&#92;n3|0&0|11#0|1#2|16#0|2&#92;n"] 
+		P2241064 -> I2241064[style=invis]
+		A1866060 -> P2241064
+}

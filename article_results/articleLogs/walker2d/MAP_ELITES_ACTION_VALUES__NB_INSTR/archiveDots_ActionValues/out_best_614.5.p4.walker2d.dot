@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:29:59
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1995043 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P837201 [fillcolor="#cccccc" shape=point label="1"] //0.543109|0.380421|0.438415|-0.433378|0.258047|0.962535|0.910580|0.441138|0.928302|0.516934|
+		I837201 [shape=box style=invis label="17|0&2|0#1|5#2|8#2|6&#92;n"] 
+		P837201 -> I837201[style=invis]
+		A1995043 -> P837201
+		P2564192 [fillcolor="#cccccc" shape=point label="1"] //-0.149311|0.500674|0.960738|-0.623282|0.995071|0.250165|0.287140|0.426099|0.086624|-0.421480|
+		I2564192 [shape=box style=invis label="11|0&2|6#2|5#1|3#1|7&#92;n"] 
+		P2564192 -> I2564192[style=invis]
+		A1995043 -> P2564192
+		P2336228 [fillcolor="#cccccc" shape=point label="1"] //-0.112944|0.432532|-0.573523|-0.144741|0.995071|0.250165|0.204213|0.426099|0.240154|-0.421480|
+		I2336228 [shape=box style=invis label="5|0&2|5#2|7#0|1#2|9&#92;n"] 
+		P2336228 -> I2336228[style=invis]
+		A1995043 -> P2336228
+		P2531711 [fillcolor="#cccccc" shape=point label="1"] //0.872615|0.237465|-0.461353|-0.455215|-0.611440|0.419717|-0.610492|-0.424989|-0.859590|0.670019|
+		I2531711 [shape=box style=invis label="19|5&2|0#1|15#1|3#1|5&#92;n9|0&0|13#0|0#1|4#1|16&#92;n"] 
+		P2531711 -> I2531711[style=invis]
+		A1995043 -> P2531711
+		P2336229 [fillcolor="#cccccc" shape=point label="1"] //1.104263|0.587907|-0.827123|0.314185|0.232715|0.254685|0.015438|-0.909697|-0.930267|-1.908644|
+		I2336229 [shape=box style=invis label="0|0&0|0#2|10#0|0#0|11&#92;n"] 
+		P2336229 -> I2336229[style=invis]
+		A1995043 -> P2336229
+		P895112 [fillcolor="#cccccc" shape=point label="1"] //0.513207|-0.579293|0.337598|-0.419545|0.463475|0.488138|0.007974|0.674195|1.227340|-0.252290|
+		I895112 [shape=box style=invis label="11|0&0|6#2|8#1|16#1|8&#92;n"] 
+		P895112 -> I895112[style=invis]
+		A1995043 -> P895112
+}

@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 04:05:11
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1780456 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2289444 [fillcolor="#cccccc" shape=point label="1"] //0.980657|0.532729|0.122885|-0.396808|-0.962833|-0.636354|0.486609|-0.021291|-0.915430|-0.160597|
+		I2289444 [shape=box style=invis label="5|0&2|15#1|6#0|16#1|6&#92;n"] 
+		P2289444 -> I2289444[style=invis]
+		A1780456 -> P2289444
+		P2289445 [fillcolor="#cccccc" shape=point label="1"] //0.456056|0.388327|0.017103|-0.991486|0.239573|-0.699267|-0.487177|0.469809|-0.792814|-0.712038|
+		I2289445 [shape=box style=invis label="1|0&2|7#2|1#2|4#0|10&#92;n"] 
+		P2289445 -> I2289445[style=invis]
+		A1780456 -> P2289445
+		P201834 [fillcolor="#cccccc" shape=point label="1"] //-0.842676|0.677556|0.122793|-0.247344|-0.192856|0.458743|0.263553|-0.811102|0.455983|0.368335|
+		I201834 [shape=box style=invis label="4|0&2|14#2|9#2|12#2|13&#92;n"] 
+		P201834 -> I201834[style=invis]
+		A1780456 -> P201834
+		P2102182 [fillcolor="#cccccc" shape=point label="1"] //-0.016885|-0.346243|-0.066718|0.536241|-0.407703|0.859995|-0.286123|-0.874628|-0.572026|0.877270|
+		I2102182 [shape=box style=invis label="16|0&2|13#1|16#2|7#0|2&#92;n"] 
+		P2102182 -> I2102182[style=invis]
+		A1780456 -> P2102182
+		P2075127 [fillcolor="#cccccc" shape=point label="1"] //0.011115|-0.693588|-0.066718|0.729017|-0.407703|0.859995|-0.261917|-0.874628|-0.572026|0.877270|
+		I2075127 [shape=box style=invis label="16|0&2|13#1|16#2|7#2|2&#92;n"] 
+		P2075127 -> I2075127[style=invis]
+		A1780456 -> P2075127
+		P2102181 [fillcolor="#cccccc" shape=point label="1"] //-0.551244|-0.287981|-0.910011|0.196500|0.345570|-0.313013|0.489244|0.080036|-0.840066|-0.770546|
+		I2102181 [shape=box style=invis label="9|0&2|5#1|0#2|14#1|5&#92;n"] 
+		P2102181 -> I2102181[style=invis]
+		A1780456 -> P2102181
+}

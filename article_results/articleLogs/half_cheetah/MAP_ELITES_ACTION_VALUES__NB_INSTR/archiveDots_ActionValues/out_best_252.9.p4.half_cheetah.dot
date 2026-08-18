@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 04:03:17
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1809882 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P1152061 [fillcolor="#cccccc" shape=point label="1"] //0.765020|0.348255|0.298611|-0.529802|-0.356255|0.779665|0.259969|0.977033|-0.679249|0.983948|
+		I1152061 [shape=box style=invis label="0|0&2|11#2|2#0|2#1|6&#92;n"] 
+		P1152061 -> I1152061[style=invis]
+		A1809882 -> P1152061
+		P1012537 [fillcolor="#cccccc" shape=point label="1"] //0.885488|-0.679613|0.298393|0.712441|1.276137|0.680356|-0.347924|0.413975|-0.541327|-0.217728|
+		I1012537 [shape=box style=invis label="1|0&2|4#2|2#1|13#0|15&#92;n"] 
+		P1012537 -> I1012537[style=invis]
+		A1809882 -> P1012537
+		P1150372 [fillcolor="#cccccc" shape=point label="1"] //0.510273|-0.538110|-0.792422|0.254836|0.676995|-0.380360|-0.992573|-0.726044|0.250199|-0.618519|
+		I1150372 [shape=box style=invis label="16|0&2|3#1|2#1|10#2|13&#92;n"] 
+		P1150372 -> I1150372[style=invis]
+		A1809882 -> P1150372
+		P2163780 [fillcolor="#cccccc" shape=point label="1"] //0.012598|0.462021|0.782964|0.531523|-0.869372|0.215361|-0.287812|0.204798|-0.544768|-0.564371|
+		I2163780 [shape=box style=invis label="16|0&2|10#1|3#0|12#1|1&#92;n"] 
+		P2163780 -> I2163780[style=invis]
+		A1809882 -> P2163780
+		P1192790 [fillcolor="#cccccc" shape=point label="1"] //-0.944921|0.045152|-0.374540|-0.033561|0.782976|0.898285|-0.856702|0.934844|0.310676|-0.432354|
+		I1192790 [shape=box style=invis label="9|0&2|6#0|12#1|3#1|5&#92;n"] 
+		P1192790 -> I1192790[style=invis]
+		A1809882 -> P1192790
+		P2327423 [fillcolor="#cccccc" shape=point label="1"] //0.588830|-0.811550|-0.633153|0.171915|-0.078420|0.239994|0.175837|-0.985372|0.722221|-0.007780|
+		I2327423 [shape=box style=invis label="8|0&2|1#0|8#1|7#2|16&#92;n"] 
+		P2327423 -> I2327423[style=invis]
+		A1809882 -> P2327423
+}

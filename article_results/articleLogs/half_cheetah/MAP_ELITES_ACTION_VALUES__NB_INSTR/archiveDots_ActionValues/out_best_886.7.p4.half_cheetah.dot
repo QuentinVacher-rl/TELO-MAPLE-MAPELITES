@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 04:05:33
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1845551 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P508237 [fillcolor="#cccccc" shape=point label="1"] //0.435174|0.827253|-0.229404|1.408207|-0.028792|0.657965|-0.514686|-0.743988|-0.735792|0.165756|
+		I508237 [shape=box style=invis label="19|0&2|5#1|13#0|4#0|1&#92;n"] 
+		P508237 -> I508237[style=invis]
+		A1845551 -> P508237
+		P2373076 [fillcolor="#cccccc" shape=point label="1"] //0.044597|0.136740|-1.219405|-1.187795|0.548327|0.652990|1.790799|-0.017743|-0.394251|-0.209678|
+		I2373076 [shape=box style=invis label="11|0&2|14#0|9#1|1#1|12&#92;n"] 
+		P2373076 -> I2373076[style=invis]
+		A1845551 -> P2373076
+		P1453325 [fillcolor="#cccccc" shape=point label="1"] //0.686859|0.813385|0.737166|1.619042|0.825086|-0.293956|0.872023|-0.348798|0.216795|-0.601965|
+		I1453325 [shape=box style=invis label="0|0&2|3#0|13#1|0#2|1&#92;n"] 
+		P1453325 -> I1453325[style=invis]
+		A1845551 -> P1453325
+		P145339 [fillcolor="#cccccc" shape=point label="1"] //-0.608920|0.814635|0.897263|0.794935|-0.294136|0.426000|0.246873|-0.442068|0.224859|1.011731|
+		I145339 [shape=box style=invis label="16|3&2|14#1|9#0|8#1|11&#92;n17|0&0|3#1|11#1|5#2|15&#92;n"] 
+		P145339 -> I145339[style=invis]
+		A1845551 -> P145339
+		P1388267 [fillcolor="#cccccc" shape=point label="1"] //-0.403663|-0.463775|0.590884|-0.751701|0.001880|0.033838|-0.226295|0.844060|-0.493394|-0.532548|
+		I1388267 [shape=box style=invis label="16|0&2|5#1|9#2|2#1|6&#92;n"] 
+		P1388267 -> I1388267[style=invis]
+		A1845551 -> P1388267
+		P1572248 [fillcolor="#cccccc" shape=point label="1"] //0.729275|-0.192235|0.142401|0.147164|-0.839449|-1.476446|0.056960|0.356593|-0.622188|0.606129|
+		I1572248 [shape=box style=invis label="0|0&0|11#2|7#1|16#0|9&#92;n"] 
+		P1572248 -> I1572248[style=invis]
+		A1845551 -> P1572248
+}

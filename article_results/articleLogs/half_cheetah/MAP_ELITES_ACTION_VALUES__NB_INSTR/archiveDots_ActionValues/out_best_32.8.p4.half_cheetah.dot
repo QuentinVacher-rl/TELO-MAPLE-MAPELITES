@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:42:42
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1861574 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2283519 [fillcolor="#cccccc" shape=point label="1"] //0.425621|0.891908|-0.897648|0.349362|-0.292644|-0.033433|-0.131627|0.003667|-0.764380|0.352585|
+		I2283519 [shape=box style=invis label="3|0&0|1#2|1#1|0#2|16&#92;n0|0&0|16#2|4#1|2#2|8&#92;n"] 
+		P2283519 -> I2283519[style=invis]
+		A1861574 -> P2283519
+		P2393202 [fillcolor="#cccccc" shape=point label="1"] //0.898554|0.124692|-0.363635|0.189375|0.089836|0.667539|-1.297846|0.365524|0.658198|0.142845|
+		I2393202 [shape=box style=invis label="11|0&2|14#2|0#1|4#1|1&#92;n"] 
+		P2393202 -> I2393202[style=invis]
+		A1861574 -> P2393202
+		P1878118 [fillcolor="#cccccc" shape=point label="1"] //0.488030|0.709948|0.929556|-0.926993|-0.421663|0.405991|-0.092290|0.591652|0.665801|-0.891823|
+		I1878118 [shape=box style=invis label="11|0&2|4#2|12#1|2#1|1&#92;n"] 
+		P1878118 -> I1878118[style=invis]
+		A1861574 -> P1878118
+		P459681 [fillcolor="#cccccc" shape=point label="1"] //0.089858|-0.345204|-0.090421|0.336382|-0.013070|0.405025|-0.933783|0.359187|-0.804724|-0.241309|
+		I459681 [shape=box style=invis label="0|0&0|6#2|2#1|1#0|1&#92;n"] 
+		P459681 -> I459681[style=invis]
+		A1861574 -> P459681
+		P223043 [fillcolor="#cccccc" shape=point label="1"] //-1.104902|-0.530611|-0.626437|-1.723869|-0.192415|0.966900|-0.371293|-0.324835|-0.235885|-0.061144|
+		I223043 [shape=box style=invis label="0|0&2|0#0|3#1|8#0|4&#92;n"] 
+		P223043 -> I223043[style=invis]
+		A1861574 -> P223043
+		P2262678 [fillcolor="#cccccc" shape=point label="1"] //0.290321|-0.147114|-0.593396|0.374275|-0.610969|0.404064|-0.607172|0.606561|0.207649|0.857632|
+		I2262678 [shape=box style=invis label="19|0&2|2#1|16#0|3#2|4&#92;n"] 
+		P2262678 -> I2262678[style=invis]
+		A1861574 -> P2262678
+}

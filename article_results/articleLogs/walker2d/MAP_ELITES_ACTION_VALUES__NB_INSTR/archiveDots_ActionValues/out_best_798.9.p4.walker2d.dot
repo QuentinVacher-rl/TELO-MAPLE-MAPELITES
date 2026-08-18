@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 02:39:04
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1908051 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2453677 [fillcolor="#cccccc" shape=point label="1"] //0.308389|-0.965101|-0.249098|-0.536618|0.597386|0.352439|-0.582988|-0.393573|-0.507755|-2.339807|
+		I2453677 [shape=box style=invis label="12|0&2|11#2|0#1|1#1|6&#92;n"] 
+		P2453677 -> I2453677[style=invis]
+		A1908051 -> P2453677
+		P1489323 [fillcolor="#cccccc" shape=point label="1"] //-1.393180|-0.674896|0.603359|0.264725|-1.207820|1.311666|0.022219|-3.442638|0.381923|1.700768|
+		I1489323 [shape=box style=invis label="11|0&0|7#2|10#1|13#1|9&#92;n"] 
+		P1489323 -> I1489323[style=invis]
+		A1908051 -> P1489323
+		P2337922 [fillcolor="#cccccc" shape=point label="1"] //-0.512157|-0.075395|0.086595|-0.835349|0.128074|0.819750|-0.666558|-0.837868|0.690973|0.200486|
+		I2337922 [shape=box style=invis label="0|0&2|5#2|8#1|11#0|15&#92;n"] 
+		P2337922 -> I2337922[style=invis]
+		A1908051 -> P2337922
+		P1205896 [fillcolor="#cccccc" shape=point label="1"] //0.611296|-0.649671|0.863878|-0.999174|-0.348574|0.998808|0.992512|-0.513110|-0.460963|0.539644|
+		I1205896 [shape=box style=invis label="5|0&2|11#2|3#1|9#1|6&#92;n"] 
+		P1205896 -> I1205896[style=invis]
+		A1908051 -> P1205896
+		P2172354 [fillcolor="#cccccc" shape=point label="1"] //-0.744427|-1.527523|-0.522544|0.357136|0.300986|0.758545|0.603475|0.922976|-0.476710|0.138575|
+		I2172354 [shape=box style=invis label="12|0&2|3#2|2#1|13#1|11&#92;n"] 
+		P2172354 -> I2172354[style=invis]
+		A1908051 -> P2172354
+		P1839669 [fillcolor="#cccccc" shape=point label="1"] //-0.262870|-0.934896|0.487215|0.314272|-0.817763|-0.475872|-0.336070|0.793531|0.158376|0.117897|
+		I1839669 [shape=box style=invis label="10|0&2|0#2|16#0|0#2|10&#92;n"] 
+		P1839669 -> I1839669[style=invis]
+		A1908051 -> P1839669
+}

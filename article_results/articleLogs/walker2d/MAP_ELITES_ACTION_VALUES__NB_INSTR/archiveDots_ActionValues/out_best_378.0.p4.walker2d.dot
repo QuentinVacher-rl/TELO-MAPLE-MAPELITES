@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:15:18
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1980690 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P1719641 [fillcolor="#cccccc" shape=point label="1"] //1.283126|-0.557865|-0.175170|-0.472794|0.243233|1.796774|0.866911|-0.071315|0.892607|0.058843|
+		I1719641 [shape=box style=invis label="11|0&2|10#2|9#1|12#1|16&#92;n"] 
+		P1719641 -> I1719641[style=invis]
+		A1980690 -> P1719641
+		P1218990 [fillcolor="#cccccc" shape=point label="1"] //-1.350388|0.474660|-0.176800|-0.469568|-0.939299|0.477912|-0.126917|-0.037614|-0.529669|-0.215800|
+		I1218990 [shape=box style=invis label="18|0&2|0#1|15#1|9#0|15&#92;n"] 
+		P1218990 -> I1218990[style=invis]
+		A1980690 -> P1218990
+		P2546611 [fillcolor="#cccccc" shape=point label="1"] //0.408499|2.721518|-1.635221|2.588125|-0.269147|0.671453|2.432839|-1.150632|-0.942610|2.613724|
+		I2546611 [shape=box style=invis label="14|0&2|8#2|9#1|4#2|2&#92;n"] 
+		P2546611 -> I2546611[style=invis]
+		A1980690 -> P2546611
+		P2154048 [fillcolor="#cccccc" shape=point label="1"] //-1.094888|-1.012188|0.183037|0.504556|-0.146736|0.186764|0.123139|0.321535|0.397914|0.177112|
+		I2154048 [shape=box style=invis label="11|0&2|1#2|14#1|10#1|9&#92;n"] 
+		P2154048 -> I2154048[style=invis]
+		A1980690 -> P2154048
+		P2385955 [fillcolor="#cccccc" shape=point label="1"] //-0.495741|0.994651|-0.787562|0.986028|-0.565160|-0.875249|0.421534|-0.709788|0.970340|0.064367|
+		I2385955 [shape=box style=invis label="15|0&2|0#1|16#2|15#0|4&#92;n"] 
+		P2385955 -> I2385955[style=invis]
+		A1980690 -> P2385955
+		P2546610 [fillcolor="#cccccc" shape=point label="1"] //-0.495741|0.994651|-0.787562|0.986028|-0.565160|-0.875249|0.637211|-0.844388|0.970340|0.112122|
+		I2546610 [shape=box style=invis label="15|0&2|0#1|12#2|15#1|4&#92;n"] 
+		P2546610 -> I2546610[style=invis]
+		A1980690 -> P2546610
+}

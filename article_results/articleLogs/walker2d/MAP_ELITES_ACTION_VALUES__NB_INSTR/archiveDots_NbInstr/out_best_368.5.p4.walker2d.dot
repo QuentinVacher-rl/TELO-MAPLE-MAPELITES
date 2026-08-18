@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:31:12
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1814543 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2072160 [fillcolor="#cccccc" shape=point label="1"] //1.521582|-0.850364|-0.841168|-0.719800|-1.027523|0.526554|-0.303360|0.274795|0.733381|0.059986|
+		I2072160 [shape=box style=invis label="7|0&0|15#1|14#0|16#1|7&#92;n5|0&0|8#1|5#2|7#1|0&#92;n"] 
+		P2072160 -> I2072160[style=invis]
+		A1814543 -> P2072160
+		P2332849 [fillcolor="#cccccc" shape=point label="1"] //0.251385|0.784317|0.543139|0.444231|-0.723425|-0.616673|-1.093101|0.894127|-0.702444|0.772233|
+		I2332849 [shape=box style=invis label="19|0&2|5#1|4#2|1#2|4&#92;n"] 
+		P2332849 -> I2332849[style=invis]
+		A1814543 -> P2332849
+		P2158013 [fillcolor="#cccccc" shape=point label="1"] //0.260991|0.087821|-0.558052|-0.102469|-0.322807|0.602368|-0.085295|-0.965433|0.457003|-0.002079|
+		I2158013 [shape=box style=invis label="17|0&2|3#1|10#0|5#2|4&#92;n"] 
+		P2158013 -> I2158013[style=invis]
+		A1814543 -> P2158013
+		P2332848 [fillcolor="#cccccc" shape=point label="1"] //-0.603466|0.515525|0.680140|0.198334|-0.652107|1.775883|0.411746|1.259426|0.680374|0.606985|
+		I2332848 [shape=box style=invis label="11|0&2|4#2|14#1|4#1|1&#92;n"] 
+		P2332848 -> I2332848[style=invis]
+		A1814543 -> P2332848
+		P1838817 [fillcolor="#cccccc" shape=point label="1"] //1.104263|0.587907|-0.827123|0.406688|0.232715|0.254685|0.015438|-0.909697|-0.930267|-1.908644|
+		I1838817 [shape=box style=invis label="0|0&0|0#2|10#0|0#0|11&#92;n"] 
+		P1838817 -> I1838817[style=invis]
+		A1814543 -> P1838817
+		P2332847 [fillcolor="#cccccc" shape=point label="1"] //-0.112944|0.432532|0.960738|-0.144741|0.995071|0.250165|0.204213|0.426099|0.240154|-0.685942|
+		I2332847 [shape=box style=invis label="0|0&2|15#2|8#2|15#0|11&#92;n"] 
+		P2332847 -> I2332847[style=invis]
+		A1814543 -> P2332847
+}

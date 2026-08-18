@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-21 22:45:57
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A573621 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P600479 [fillcolor="#cccccc" shape=point label="1"] //-0.924479|-0.338192|-0.904105|-0.731689|-0.933915|-0.358002|-0.404990|0.791841|-0.310791|-0.385818|
+		I600479 [shape=box style=invis label="5|0&2|14#0|6#2|16#1|5&#92;n"] 
+		P600479 -> I600479[style=invis]
+		A573621 -> P600479
+		P24400 [fillcolor="#cccccc" shape=point label="1"] //0.343062|-0.432450|0.963422|-0.680511|-0.451469|-0.473158|-0.052545|-0.217390|0.010284|0.215562|
+		I24400 [shape=box style=invis label="18|0&2|0#1|0#2|6#0|14&#92;n"] 
+		P24400 -> I24400[style=invis]
+		A573621 -> P24400
+		P741472 [fillcolor="#cccccc" shape=point label="1"] //-0.076560|0.778585|0.276066|0.612685|0.124391|-1.877383|1.469492|0.982523|-0.222303|0.052362|
+		I741472 [shape=box style=invis label="11|0&2|7#2|8#1|9#1|16&#92;n"] 
+		P741472 -> I741472[style=invis]
+		A573621 -> P741472
+		P508492 [fillcolor="#cccccc" shape=point label="1"] //-0.084054|-1.429199|-0.404099|-0.017696|0.720579|0.246313|-0.283024|0.634353|0.501355|-0.622311|
+		I508492 [shape=box style=invis label="3|6&2|0#0|11#1|5#0|7&#92;n1|0&2|0#0|14#2|14#2|14&#92;n"] 
+		P508492 -> I508492[style=invis]
+		A573621 -> P508492
+		P23448 [fillcolor="#cccccc" shape=point label="1"] //0.165242|-0.481527|0.790039|0.537752|-0.907177|0.349432|0.297164|0.813829|0.015262|-0.826048|
+		I23448 [shape=box style=invis label="18|0&2|8#1|4#2|6#0|4&#92;n"] 
+		P23448 -> I23448[style=invis]
+		A573621 -> P23448
+		P207732 [fillcolor="#cccccc" shape=point label="1"] //-1.154236|0.462409|0.807347|-0.419148|-0.379715|-0.563196|-0.115853|0.197399|1.906864|-0.560546|
+		I207732 [shape=box style=invis label="17|1&2|3#1|16#1|8#0|9&#92;n18|0&0|1#1|1#1|10#0|5&#92;n"] 
+		P207732 -> I207732[style=invis]
+		A573621 -> P207732
+}

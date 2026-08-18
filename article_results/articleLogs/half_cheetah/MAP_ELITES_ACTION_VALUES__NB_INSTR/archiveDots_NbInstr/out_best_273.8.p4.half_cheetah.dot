@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:44:01
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1936827 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2193922 [fillcolor="#cccccc" shape=point label="1"] //0.533119|0.569278|-0.649621|-0.352478|-0.509046|0.745863|0.094229|-0.010899|0.002322|-0.556740|
+		I2193922 [shape=box style=invis label="3|0&2|11#0|12#0|7#2|12&#92;n"] 
+		P2193922 -> I2193922[style=invis]
+		A1936827 -> P2193922
+		P1843279 [fillcolor="#cccccc" shape=point label="1"] //-0.529630|-1.118125|0.790756|-0.292309|-0.955532|0.461070|-0.816861|0.418083|0.942410|0.057640|
+		I1843279 [shape=box style=invis label="16|0&2|0#1|11#0|16#2|0&#92;n"] 
+		P1843279 -> I1843279[style=invis]
+		A1936827 -> P1843279
+		P1364749 [fillcolor="#cccccc" shape=point label="1"] //-0.371174|-0.737201|0.015336|-0.695054|-0.426241|0.395531|0.617445|-0.363399|0.273185|-0.109563|
+		I1364749 [shape=box style=invis label="8|0&2|3#1|6#2|13#0|3&#92;n"] 
+		P1364749 -> I1364749[style=invis]
+		A1936827 -> P1364749
+		P598836 [fillcolor="#cccccc" shape=point label="1"] //0.600735|0.009873|-0.577571|0.080469|-0.730267|-0.126175|0.998289|0.711578|0.602822|-0.781034|
+		I598836 [shape=box style=invis label="8|0&2|1#1|14#0|0#2|8&#92;n"] 
+		P598836 -> I598836[style=invis]
+		A1936827 -> P598836
+		P2489867 [fillcolor="#cccccc" shape=point label="1"] //0.302800|0.109473|0.286564|-0.576287|0.801697|-1.296296|0.200146|0.609517|0.757372|0.247396|
+		I2489867 [shape=box style=invis label="11|0&2|10#2|2#1|6#1|0&#92;n"] 
+		P2489867 -> I2489867[style=invis]
+		A1936827 -> P2489867
+		P1532013 [fillcolor="#cccccc" shape=point label="1"] //0.548519|-0.653625|-0.502941|0.344533|-0.288629|0.793051|-1.047730|-0.728600|-0.660581|0.150190|
+		I1532013 [shape=box style=invis label="16|0&2|10#1|0#1|10#2|14&#92;n"] 
+		P1532013 -> I1532013[style=invis]
+		A1936827 -> P1532013
+}

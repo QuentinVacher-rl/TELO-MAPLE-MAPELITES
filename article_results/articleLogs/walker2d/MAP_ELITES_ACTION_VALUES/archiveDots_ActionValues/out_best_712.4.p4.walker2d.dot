@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-21 21:11:01
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1745738 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2245068 [fillcolor="#cccccc" shape=point label="1"] //0.783357|-0.802224|0.888014|-0.372303|0.292010|-0.810756|0.439741|-0.096724|-0.350900|-0.035926|
+		I2245068 [shape=box style=invis label="7|0&2|0#1|10#0|3#1|9&#92;n"] 
+		P2245068 -> I2245068[style=invis]
+		A1745738 -> P2245068
+		P1694786 [fillcolor="#cccccc" shape=point label="1"] //0.937674|0.677598|0.351227|0.513180|0.916109|-0.828739|-0.883945|-0.095300|0.205090|0.552519|
+		I1694786 [shape=box style=invis label="5|0&2|2#1|16#0|4#2|13&#92;n"] 
+		P1694786 -> I1694786[style=invis]
+		A1745738 -> P1694786
+		P1176075 [fillcolor="#cccccc" shape=point label="1"] //0.067728|-0.245979|0.062705|-0.930007|0.206810|-0.547857|-0.519234|0.997393|-0.644052|-0.549731|
+		I1176075 [shape=box style=invis label="1|0&2|7#2|2#0|5#1|4&#92;n"] 
+		P1176075 -> I1176075[style=invis]
+		A1745738 -> P1176075
+		P932927 [fillcolor="#cccccc" shape=point label="1"] //0.468079|-0.010518|0.460022|0.657776|-0.149848|-0.297339|0.375399|0.667878|-0.047330|-0.709530|
+		I932927 [shape=box style=invis label="15|1&2|14#1|0#0|10#0|4&#92;n19|2&0|9#1|4#0|0#2|13&#92;n4|0&0|2#2|5#2|5#2|10&#92;n"] 
+		P932927 -> I932927[style=invis]
+		A1745738 -> P932927
+		P932928 [fillcolor="#cccccc" shape=point label="1"] //0.285621|0.162130|0.656265|0.088212|-0.399671|-0.317082|-0.994603|0.757670|0.227774|-0.461119|
+		I932928 [shape=box style=invis label="5|0&2|16#1|10#1|1#0|10&#92;n"] 
+		P932928 -> I932928[style=invis]
+		A1745738 -> P932928
+		P371 [fillcolor="#cccccc" shape=point label="1"] //-0.566201|0.363859|-0.839795|0.376917|0.975660|-0.929228|-0.984153|0.469256|0.744266|0.354831|
+		I371 [shape=box style=invis label="0|0&2|6#2|8#1|7#0|4&#92;n"] 
+		P371 -> I371[style=invis]
+		A1745738 -> P371
+}

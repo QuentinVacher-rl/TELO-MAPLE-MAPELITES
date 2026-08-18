@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 01:29:00
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1985021 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2525824 [fillcolor="#cccccc" shape=point label="1"] //0.324231|0.320823|0.089884|0.278357|-0.247393|-1.500039|0.947330|0.943745|-0.165735|0.950509|
+		I2525824 [shape=box style=invis label="11|0&2|9#2|7#1|15#1|0&#92;n"] 
+		P2525824 -> I2525824[style=invis]
+		A1985021 -> P2525824
+		P1980562 [fillcolor="#cccccc" shape=point label="1"] //0.231617|0.245791|-0.394424|-0.755392|0.344046|0.541374|-1.181415|0.676111|-0.240044|0.591675|
+		I1980562 [shape=box style=invis label="12|0&2|2#2|14#1|6#1|12&#92;n"] 
+		P1980562 -> I1980562[style=invis]
+		A1985021 -> P1980562
+		P2485588 [fillcolor="#cccccc" shape=point label="1"] //-0.311941|-0.006385|0.786325|-0.154663|-0.569564|-0.373171|1.346203|-0.632162|0.553980|0.357462|
+		I2485588 [shape=box style=invis label="0|0&2|15#2|8#2|15#2|11&#92;n"] 
+		P2485588 -> I2485588[style=invis]
+		A1985021 -> P2485588
+		P2343912 [fillcolor="#cccccc" shape=point label="1"] //-0.155421|0.877046|-0.285275|1.831636|-0.398822|0.798373|0.246844|-0.311367|0.742560|-0.872386|
+		I2343912 [shape=box style=invis label="5|0&2|0#2|13#2|0#1|5&#92;n"] 
+		P2343912 -> I2343912[style=invis]
+		A1985021 -> P2343912
+		P2077820 [fillcolor="#cccccc" shape=point label="1"] //-0.085782|-0.411984|0.407325|0.535474|-0.140205|0.803085|0.701693|0.226749|0.085349|-0.000565|
+		I2077820 [shape=box style=invis label="4|0&2|11#2|0#2|3#0|12&#92;n"] 
+		P2077820 -> I2077820[style=invis]
+		A1985021 -> P2077820
+		P2552157 [fillcolor="#cccccc" shape=point label="1"] //-0.576435|-0.443855|-0.084834|0.134502|-0.352339|0.332193|0.550137|0.741665|-0.620685|0.024620|
+		I2552157 [shape=box style=invis label="5|0&2|8#0|10#2|7#0|5&#92;n"] 
+		P2552157 -> I2552157[style=invis]
+		A1985021 -> P2552157
+}

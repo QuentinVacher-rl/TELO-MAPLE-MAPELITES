@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 00:46:37
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1998040 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2501943 [fillcolor="#cccccc" shape=point label="1"] //1.655497|-0.560911|-0.498679|-0.478479|-0.355359|0.217788|3.620158|-0.646325|0.842585|-0.108547|
+		I2501943 [shape=box style=invis label="18|0&2|1#1|1#1|10#2|0&#92;n"] 
+		P2501943 -> I2501943[style=invis]
+		A1998040 -> P2501943
+		P2567609 [fillcolor="#cccccc" shape=point label="1"] //-1.408515|-0.203595|2.488603|0.899719|1.674075|0.990840|-0.061191|0.856062|-0.536299|-0.084867|
+		I2567609 [shape=box style=invis label="15|0&2|6#1|7#0|4#1|4&#92;n"] 
+		P2567609 -> I2567609[style=invis]
+		A1998040 -> P2567609
+		P2320629 [fillcolor="#cccccc" shape=point label="1"] //-0.150829|0.352296|0.889301|0.254021|0.581796|0.109791|0.767860|-0.615338|-0.169906|-0.017069|
+		I2320629 [shape=box style=invis label="15|0&0|16#1|8#2|16#2|8&#92;n12|5&2|16#0|0#1|15#1|12&#92;n11|0&0|5#2|8#1|5#1|11&#92;n"] 
+		P2320629 -> I2320629[style=invis]
+		A1998040 -> P2320629
+		P2532823 [fillcolor="#cccccc" shape=point label="1"] //-1.034551|0.474349|0.253083|-0.249103|-0.097117|-0.911522|0.832979|0.053251|0.045025|-0.804462|
+		I2532823 [shape=box style=invis label="15|0&2|10#1|5#1|2#2|13&#92;n"] 
+		P2532823 -> I2532823[style=invis]
+		A1998040 -> P2532823
+		P2165332 [fillcolor="#cccccc" shape=point label="1"] //-0.401524|-0.967824|0.012469|-0.176586|0.717208|-0.200705|1.015256|-0.720157|0.781955|1.098786|
+		I2165332 [shape=box style=invis label="9|0&2|0#1|13#2|4#0|12&#92;n"] 
+		P2165332 -> I2165332[style=invis]
+		A1998040 -> P2165332
+		P2297290 [fillcolor="#cccccc" shape=point label="1"] //-0.926943|1.186430|0.148096|-0.010136|0.632630|0.645046|-1.716428|-0.747787|-0.989539|-0.116415|
+		I2297290 [shape=box style=invis label="0|0&0|6#2|10#0|4#0|7&#92;n2|0&2|8#0|0#1|2#2|16&#92;n"] 
+		P2297290 -> I2297290[style=invis]
+		A1998040 -> P2297290
+}

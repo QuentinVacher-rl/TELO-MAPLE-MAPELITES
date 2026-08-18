@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:16:41
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1987915 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2035074 [fillcolor="#cccccc" shape=point label="1"] //1.154106|-0.557865|-0.175170|-0.337033|0.243233|0.919705|1.679856|-0.071315|0.892607|0.058843|
+		I2035074 [shape=box style=invis label="11|0&2|7#2|9#1|12#1|16&#92;n1|0&2|16#0|0#0|3#2|16&#92;n"] 
+		P2035074 -> I2035074[style=invis]
+		A1987915 -> P2035074
+		P1920672 [fillcolor="#cccccc" shape=point label="1"] //0.630885|0.508198|-0.565934|0.879751|0.898414|0.147437|0.658714|-0.335403|0.252893|0.326044|
+		I1920672 [shape=box style=invis label="5|0&2|11#1|13#2|0#1|12&#92;n"] 
+		P1920672 -> I1920672[style=invis]
+		A1987915 -> P1920672
+		P220929 [fillcolor="#cccccc" shape=point label="1"] //0.336819|-0.503534|-1.849339|0.912008|0.154073|0.444203|-1.843875|-0.885428|-0.944256|-1.355660|
+		I220929 [shape=box style=invis label="18|0&2|8#1|2#0|10#0|1&#92;n"] 
+		P220929 -> I220929[style=invis]
+		A1987915 -> P220929
+		P2222200 [fillcolor="#cccccc" shape=point label="1"] //-0.213089|-0.626181|0.722062|0.123827|0.854741|0.266583|0.963456|0.640190|-1.390384|-0.840889|
+		I2222200 [shape=box style=invis label="5|0&2|7#2|7#1|13#2|7&#92;n"] 
+		P2222200 -> I2222200[style=invis]
+		A1987915 -> P2222200
+		P2555900 [fillcolor="#cccccc" shape=point label="1"] //0.468278|-1.262047|1.206159|-0.021425|-0.415203|-0.032866|-0.912793|-0.697424|-0.248196|0.307481|
+		I2555900 [shape=box style=invis label="18|0&2|0#1|9#2|6#1|2&#92;n"] 
+		P2555900 -> I2555900[style=invis]
+		A1987915 -> P2555900
+		P2004125 [fillcolor="#cccccc" shape=point label="1"] //0.287714|0.563638|-0.582752|0.859514|-0.462089|-0.214564|-0.275978|-0.243398|0.397272|0.314098|
+		I2004125 [shape=box style=invis label="15|0&2|10#1|9#1|3#1|7&#92;n"] 
+		P2004125 -> I2004125[style=invis]
+		A1987915 -> P2004125
+}

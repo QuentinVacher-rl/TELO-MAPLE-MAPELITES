@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-21 23:50:08
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1999203 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2330592 [fillcolor="#cccccc" shape=point label="1"] //2.862827|-0.142876|-0.036212|-0.092168|0.938954|-0.129171|0.286681|0.078533|0.271323|1.468628|
+		I2330592 [shape=box style=invis label="11|0&2|7#0|8#1|16#1|16&#92;n"] 
+		P2330592 -> I2330592[style=invis]
+		A1999203 -> P2330592
+		P2084373 [fillcolor="#cccccc" shape=point label="1"] //0.248019|0.300161|0.320042|0.423014|0.518618|-0.928574|0.510742|0.124706|-0.715933|-0.450631|
+		I2084373 [shape=box style=invis label="11|0&2|8#2|12#1|16#1|16&#92;n"] 
+		P2084373 -> I2084373[style=invis]
+		A1999203 -> P2084373
+		P491604 [fillcolor="#cccccc" shape=point label="1"] //-0.166734|0.219654|-0.259456|-0.643591|-0.097824|-0.915798|-0.817897|0.371973|0.165833|1.785601|
+		I491604 [shape=box style=invis label="12|0&0|0#2|8#1|5#1|15&#92;n"] 
+		P491604 -> I491604[style=invis]
+		A1999203 -> P491604
+		P2570614 [fillcolor="#cccccc" shape=point label="1"] //0.384343|0.302639|0.320042|0.552617|0.843384|-0.873451|1.407382|0.124706|-0.590986|-0.623269|
+		I2570614 [shape=box style=invis label="1|0&0|12#2|0#0|16#1|16&#92;n"] 
+		P2570614 -> I2570614[style=invis]
+		A1999203 -> P2570614
+		P2536991 [fillcolor="#cccccc" shape=point label="1"] //-0.449820|-0.172643|1.934346|0.029618|0.797302|0.045534|-0.240131|-0.591815|-0.657874|-0.961456|
+		I2536991 [shape=box style=invis label="15|0&2|0#1|4#0|15#1|14&#92;n"] 
+		P2536991 -> I2536991[style=invis]
+		A1999203 -> P2536991
+		P2059026 [fillcolor="#cccccc" shape=point label="1"] //0.235796|-0.734070|-0.528747|0.614959|0.586101|-0.064353|-0.217336|0.248688|-0.692011|0.853833|
+		I2059026 [shape=box style=invis label="13|0&2|8#2|11#1|6#2|13&#92;n"] 
+		P2059026 -> I2059026[style=invis]
+		A1999203 -> P2059026
+}

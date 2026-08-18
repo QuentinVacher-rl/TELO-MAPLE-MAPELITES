@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 02:34:08
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1993070 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2416011 [fillcolor="#cccccc" shape=point label="1"] //0.339383|0.097516|-0.702474|0.836309|-0.286857|1.469366|-0.912980|-0.086586|-0.550228|-0.151298|
+		I2416011 [shape=box style=invis label="12|0&2|0#2|13#1|4#1|7&#92;n"] 
+		P2416011 -> I2416011[style=invis]
+		A1993070 -> P2416011
+		P2312340 [fillcolor="#cccccc" shape=point label="1"] //0.076342|0.477489|1.200263|-0.117742|0.280340|-0.348220|-0.598302|0.121735|0.958644|-0.844773|
+		I2312340 [shape=box style=invis label="18|0&2|7#1|15#2|15#0|12&#92;n"] 
+		P2312340 -> I2312340[style=invis]
+		A1993070 -> P2312340
+		P1662346 [fillcolor="#cccccc" shape=point label="1"] //-0.990740|-0.932195|-0.397525|-0.238007|0.433679|0.724336|-0.424035|-0.757555|-0.057217|-0.678777|
+		I1662346 [shape=box style=invis label="0|0&2|14#2|10#0|5#1|6&#92;n"] 
+		P1662346 -> I1662346[style=invis]
+		A1993070 -> P1662346
+		P2561890 [fillcolor="#cccccc" shape=point label="1"] //-0.016885|-0.784606|0.065679|0.536241|-0.407703|0.941898|-0.486514|-0.874628|-0.572026|0.328086|
+		I2561890 [shape=box style=invis label="16|0&2|13#1|16#2|7#1|9&#92;n"] 
+		P2561890 -> I2561890[style=invis]
+		A1993070 -> P2561890
+		P2957 [fillcolor="#cccccc" shape=point label="1"] //0.462735|-0.048818|-0.278113|-0.895261|-0.026568|-0.056966|-0.361582|0.944636|0.669804|0.997840|
+		I2957 [shape=box style=invis label="9|0&2|6#2|11#1|10#1|12&#92;n"] 
+		P2957 -> I2957[style=invis]
+		A1993070 -> P2957
+		P2489464 [fillcolor="#cccccc" shape=point label="1"] //0.519238|0.647262|0.083772|-0.865369|0.318530|-0.297752|1.105526|0.483770|-0.922146|0.368715|
+		I2489464 [shape=box style=invis label="6|0&2|3#2|13#2|16#0|2&#92;n"] 
+		P2489464 -> I2489464[style=invis]
+		A1993070 -> P2489464
+}

@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:19:59
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1604562 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P203193 [fillcolor="#cccccc" shape=point label="1"] //0.649031|0.633492|0.695870|-0.969568|-0.871240|-0.084655|0.447022|0.582413|1.108159|-0.200605|
+		I203193 [shape=box style=invis label="12|0&2|11#0|2#1|10#1|8&#92;n"] 
+		P203193 -> I203193[style=invis]
+		A1604562 -> P203193
+		P1609234 [fillcolor="#cccccc" shape=point label="1"] //-0.471068|0.356986|0.311495|-1.123563|-0.196120|0.066854|0.751919|-0.933739|0.118302|-0.988125|
+		I1609234 [shape=box style=invis label="16|0&2|7#1|7#1|7#0|2&#92;n"] 
+		P1609234 -> I1609234[style=invis]
+		A1604562 -> P1609234
+		P766404 [fillcolor="#cccccc" shape=point label="1"] //0.743699|-1.010680|-0.424326|0.399940|-0.110718|0.318326|0.319342|0.815247|0.677712|0.434984|
+		I766404 [shape=box style=invis label="7|3&0|2#2|2#1|0#2|8&#92;n0|0&0|9#0|3#1|8#2|15&#92;n"] 
+		P766404 -> I766404[style=invis]
+		A1604562 -> P766404
+		P246970 [fillcolor="#cccccc" shape=point label="1"] //0.853513|1.737547|-0.074712|0.347943|0.248081|0.092574|-0.065244|0.060073|-0.476646|-0.400644|
+		I246970 [shape=box style=invis label="16|0&2|11#1|12#2|9#0|7&#92;n"] 
+		P246970 -> I246970[style=invis]
+		A1604562 -> P246970
+		P1055653 [fillcolor="#cccccc" shape=point label="1"] //-0.167177|-0.090995|0.870533|0.293594|0.158391|-0.771045|0.377922|-0.924953|-1.391451|-0.471668|
+		I1055653 [shape=box style=invis label="11|0&2|0#2|6#1|3#1|7&#92;n"] 
+		P1055653 -> I1055653[style=invis]
+		A1604562 -> P1055653
+		P2064126 [fillcolor="#cccccc" shape=point label="1"] //0.307472|0.427896|-0.178536|0.353584|0.568617|0.905792|-0.371232|-0.846425|-0.085005|0.849994|
+		I2064126 [shape=box style=invis label="4|0&2|10#2|3#2|16#2|5&#92;n"] 
+		P2064126 -> I2064126[style=invis]
+		A1604562 -> P2064126
+}

@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 01:07:00
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1987028 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2047345 [fillcolor="#cccccc" shape=point label="1"] //0.263511|-0.207275|-0.330854|-1.094542|0.350176|-0.870630|-1.716638|0.415918|-0.206311|0.359985|
+		I2047345 [shape=box style=invis label="0|0&0|6#2|9#2|11#1|10&#92;n"] 
+		P2047345 -> I2047345[style=invis]
+		A1987028 -> P2047345
+		P2554981 [fillcolor="#cccccc" shape=point label="1"] //0.253537|0.884987|-0.502909|0.118618|-0.523044|0.035703|-0.242391|-0.471860|-0.991056|0.533063|
+		I2554981 [shape=box style=invis label="5|0&0|2#2|7#1|15#2|15&#92;n"] 
+		P2554981 -> I2554981[style=invis]
+		A1987028 -> P2554981
+		P2372578 [fillcolor="#cccccc" shape=point label="1"] //-0.435845|-0.829416|0.377719|0.164768|-1.457747|-0.659983|-0.990388|0.422733|-0.041693|-0.688915|
+		I2372578 [shape=box style=invis label="11|0&0|7#2|2#1|1#1|14&#92;n"] 
+		P2372578 -> I2372578[style=invis]
+		A1987028 -> P2372578
+		P2419671 [fillcolor="#cccccc" shape=point label="1"] //0.727493|-0.330579|0.592601|0.146158|0.676248|2.047923|-0.803171|-0.552312|-0.279365|0.143486|
+		I2419671 [shape=box style=invis label="15|0&2|0#1|15#0|13#1|15&#92;n"] 
+		P2419671 -> I2419671[style=invis]
+		A1987028 -> P2419671
+		P2554980 [fillcolor="#cccccc" shape=point label="1"] //0.954037|0.897419|0.183037|0.462898|0.350246|0.173170|0.161167|0.513466|0.397914|0.177112|
+		I2554980 [shape=box style=invis label="7|0&2|0#0|16#0|2#0|5&#92;n"] 
+		P2554980 -> I2554980[style=invis]
+		A1987028 -> P2554980
+		P1333007 [fillcolor="#cccccc" shape=point label="1"] //0.864424|-0.425575|0.111597|-0.497182|0.072944|1.468550|-0.427708|-0.549902|-0.322537|0.155771|
+		I1333007 [shape=box style=invis label="5|0&2|1#0|13#1|7#2|12&#92;n9|0&0|0#1|12#1|8#0|9&#92;n"] 
+		P1333007 -> I1333007[style=invis]
+		A1987028 -> P1333007
+}

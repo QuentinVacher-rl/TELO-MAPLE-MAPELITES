@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-21 22:47:30
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1918045 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P298495 [fillcolor="#cccccc" shape=point label="1"] //0.910458|-0.881756|0.112139|-0.599956|-0.958387|-0.705028|0.091544|0.644287|0.250997|0.087706|
+		I298495 [shape=box style=invis label="5|0&2|7#0|0#2|9#1|13&#92;n"] 
+		P298495 -> I298495[style=invis]
+		A1918045 -> P298495
+		P211905 [fillcolor="#cccccc" shape=point label="1"] //-0.601341|-0.489838|0.794892|0.805271|-0.479249|0.275681|-0.838157|-0.575023|0.734223|-0.788889|
+		I211905 [shape=box style=invis label="18|0&2|1#1|6#2|0#0|4&#92;n"] 
+		P211905 -> I211905[style=invis]
+		A1918045 -> P211905
+		P409658 [fillcolor="#cccccc" shape=point label="1"] //0.376434|-0.299880|-0.476090|0.109439|0.289534|0.826062|0.687308|-0.434305|0.627917|0.649693|
+		I409658 [shape=box style=invis label="15|0&0|0#1|0#2|4#0|10&#92;n"] 
+		P409658 -> I409658[style=invis]
+		A1918045 -> P409658
+		P1024293 [fillcolor="#cccccc" shape=point label="1"] //1.974118|0.023139|-0.733409|0.370752|-0.330702|-0.370355|-1.204715|-0.880653|-0.943311|-0.067282|
+		I1024293 [shape=box style=invis label="12|0&2|10#2|4#1|6#1|12&#92;n"] 
+		P1024293 -> I1024293[style=invis]
+		A1918045 -> P1024293
+		P2466432 [fillcolor="#cccccc" shape=point label="1"] //-0.737916|-0.572334|-2.143123|2.855843|0.016167|0.436109|0.099360|0.133961|1.519995|-0.983175|
+		I2466432 [shape=box style=invis label="9|3&2|4#0|16#0|2#0|12&#92;n9|0&0|3#0|5#2|10#2|2&#92;n"] 
+		P2466432 -> I2466432[style=invis]
+		A1918045 -> P2466432
+		P673838 [fillcolor="#cccccc" shape=point label="1"] //0.932930|-0.063328|-0.173192|0.218770|-0.178126|-0.463845|0.152309|-0.302704|-0.498803|0.359541|
+		I673838 [shape=box style=invis label="0|0&0|16#2|8#0|2#0|15&#92;n"] 
+		P673838 -> I673838[style=invis]
+		A1918045 -> P673838
+}

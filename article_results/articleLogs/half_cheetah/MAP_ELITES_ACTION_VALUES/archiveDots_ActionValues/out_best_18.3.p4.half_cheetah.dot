@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:02:00
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1960145 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2276082 [fillcolor="#cccccc" shape=point label="1"] //0.126593|0.439805|0.121124|0.261703|0.465195|-0.329949|0.634086|-0.683494|0.223872|-0.946745|
+		I2276082 [shape=box style=invis label="4|0&2|3#2|9#2|9#1|2&#92;n"] 
+		P2276082 -> I2276082[style=invis]
+		A1960145 -> P2276082
+		P1971116 [fillcolor="#cccccc" shape=point label="1"] //-0.041130|0.110032|-0.637151|-0.548770|-0.140758|0.078960|0.321721|-0.949472|0.144064|-1.041437|
+		I1971116 [shape=box style=invis label="11|0&2|11#0|14#1|3#1|14&#92;n"] 
+		P1971116 -> I1971116[style=invis]
+		A1960145 -> P1971116
+		P2520985 [fillcolor="#cccccc" shape=point label="1"] //-0.019141|0.156278|0.310600|-1.139240|-0.518337|0.795966|0.321403|-0.534353|-0.427981|-0.398560|
+		I2520985 [shape=box style=invis label="1|0&2|3#2|3#1|6#1|8&#92;n"] 
+		P2520985 -> I2520985[style=invis]
+		A1960145 -> P2520985
+		P1170815 [fillcolor="#cccccc" shape=point label="1"] //0.748645|0.922172|-0.125517|-0.722909|-0.722067|0.739238|0.522634|-0.070472|-0.370918|-0.328235|
+		I1170815 [shape=box style=invis label="5|4&2|11#1|4#1|10#2|7&#92;n11|0&2|10#0|4#1|6#1|11&#92;n"] 
+		P1170815 -> I1170815[style=invis]
+		A1960145 -> P1170815
+		P2442878 [fillcolor="#cccccc" shape=point label="1"] //0.748645|0.922172|-0.110935|-0.436919|-0.722067|0.739238|0.261521|-0.037789|-0.370918|-0.328235|
+		I2442878 [shape=box style=invis label="11|0&2|10#2|4#1|6#1|11&#92;n"] 
+		P2442878 -> I2442878[style=invis]
+		A1960145 -> P2442878
+		P2151519 [fillcolor="#cccccc" shape=point label="1"] //-1.089001|-0.513053|0.566122|-0.532530|-0.655203|0.098908|0.942830|0.036136|0.594721|0.120801|
+		I2151519 [shape=box style=invis label="19|0&2|5#1|12#2|9#2|11&#92;n"] 
+		P2151519 -> I2151519[style=invis]
+		A1960145 -> P2151519
+}

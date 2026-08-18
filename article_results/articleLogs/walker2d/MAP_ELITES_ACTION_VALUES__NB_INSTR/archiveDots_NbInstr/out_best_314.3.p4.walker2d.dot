@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 03:41:19
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1989627 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P1053842 [fillcolor="#cccccc" shape=point label="1"] //1.337575|-0.185206|0.162068|0.313633|0.443275|0.484604|0.185894|-0.782348|0.465494|0.792964|
+		I1053842 [shape=box style=invis label=""] 
+		P1053842 -> I1053842[style=invis]
+		A1989627 -> P1053842
+		P1787280 [fillcolor="#cccccc" shape=point label="1"] //-0.495806|0.193007|0.958454|-0.497819|0.469449|0.340250|-0.658828|0.130301|-0.999192|0.359960|
+		I1787280 [shape=box style=invis label="9|0&2|2#1|10#0|2#1|10&#92;n"] 
+		P1787280 -> I1787280[style=invis]
+		A1989627 -> P1787280
+		P2558596 [fillcolor="#cccccc" shape=point label="1"] //0.413229|0.961176|-0.182665|-0.039639|0.480212|-0.442909|0.597885|0.173454|0.347451|0.673816|
+		I2558596 [shape=box style=invis label="11|0&2|7#2|8#1|10#1|16&#92;n"] 
+		P2558596 -> I2558596[style=invis]
+		A1989627 -> P2558596
+		P2301614 [fillcolor="#cccccc" shape=point label="1"] //-0.833735|-0.733633|0.106954|-0.373870|0.363374|0.401727|-1.484282|0.126792|-0.821935|0.874289|
+		I2301614 [shape=box style=invis label="15|0&2|3#1|15#0|14#1|10&#92;n"] 
+		P2301614 -> I2301614[style=invis]
+		A1989627 -> P2301614
+		P84567 [fillcolor="#cccccc" shape=point label="1"] //0.098957|-0.763439|-0.972357|0.698941|-0.113826|0.787223|0.325872|0.489615|0.458294|0.695242|
+		I84567 [shape=box style=invis label="0|6&0|4#2|10#2|1#0|14&#92;n1|0&2|0#0|6#0|9#2|2&#92;n"] 
+		P84567 -> I84567[style=invis]
+		A1989627 -> P84567
+		P2505965 [fillcolor="#cccccc" shape=point label="1"] //0.487632|0.031010|0.364072|-0.449610|-0.545637|-0.500744|0.101847|1.668825|0.943693|0.412028|
+		I2505965 [shape=box style=invis label="0|0&2|5#2|10#2|11#2|10&#92;n1|0&2|6#0|0#0|12#2|6&#92;n"] 
+		P2505965 -> I2505965[style=invis]
+		A1989627 -> P2505965
+}

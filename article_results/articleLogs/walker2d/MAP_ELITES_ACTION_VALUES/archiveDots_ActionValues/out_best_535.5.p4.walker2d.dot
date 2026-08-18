@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-21 23:07:31
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A333112 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P268324 [fillcolor="#cccccc" shape=point label="1"] //0.329528|-0.370812|-0.287075|-0.708079|0.170639|0.243815|0.223830|0.342518|0.585682|0.474223|
+		I268324 [shape=box style=invis label="14|0&2|4#0|7#1|9#0|9&#92;n"] 
+		P268324 -> I268324[style=invis]
+		A333112 -> P268324
+		P346869 [fillcolor="#cccccc" shape=point label="1"] //-0.253619|-0.261206|0.613629|0.478134|-0.637787|-0.494647|0.606996|0.903774|-0.567196|-0.175316|
+		I346869 [shape=box style=invis label="7|4&0|10#2|5#1|13#2|9&#92;n7|0&0|4#0|12#1|5#0|4&#92;n"] 
+		P346869 -> I346869[style=invis]
+		A333112 -> P346869
+		P283822 [fillcolor="#cccccc" shape=point label="1"] //0.850234|-0.009719|-0.278142|0.480186|-0.713752|1.068012|-0.905053|-0.896071|-0.639960|0.031243|
+		I283822 [shape=box style=invis label="15|0&2|11#1|2#1|4#1|5&#92;n"] 
+		P283822 -> I283822[style=invis]
+		A333112 -> P283822
+		P277976 [fillcolor="#cccccc" shape=point label="1"] //-0.496718|-0.809528|0.950278|0.647963|0.812431|-0.163142|0.716266|-0.196071|-0.680394|-0.574145|
+		I277976 [shape=box style=invis label="16|7&2|10#1|11#0|0#0|14&#92;n5|0&0|7#1|4#1|12#0|8&#92;n"] 
+		P277976 -> I277976[style=invis]
+		A333112 -> P277976
+		P8717 [fillcolor="#cccccc" shape=point label="1"] //-0.437666|-0.282135|-1.337423|0.534890|-0.529579|-0.122029|-0.576340|-0.056569|-0.723202|0.488769|
+		I8717 [shape=box style=invis label="11|0&2|10#0|8#1|2#1|0&#92;n"] 
+		P8717 -> I8717[style=invis]
+		A333112 -> P8717
+		P432360 [fillcolor="#cccccc" shape=point label="1"] //-0.928960|0.953645|0.124654|-0.519580|0.561979|-0.381094|-0.466185|0.904023|0.034426|0.669064|
+		I432360 [shape=box style=invis label="12|0&2|3#2|8#1|5#1|10&#92;n"] 
+		P432360 -> I432360[style=invis]
+		A333112 -> P432360
+}

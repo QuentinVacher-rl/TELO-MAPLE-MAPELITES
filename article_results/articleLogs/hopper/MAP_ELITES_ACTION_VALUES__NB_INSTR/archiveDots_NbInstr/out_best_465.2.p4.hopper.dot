@@ -1,0 +1,20 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-21 18:12:26
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1986482 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2"]
+		P2500526 [fillcolor="#cccccc" shape=point label="1"] //-0.473956|-0.765471|-0.282886|0.161576|0.509953|-1.458887|-0.167543|0.334411|0.221670|2.066105|
+		I2500526 [shape=box style=invis label="19|6&2|0#1|0#0|8#2|10&#92;n19|0&0|6#1|6#2|1#0|1&#92;n"] 
+		P2500526 -> I2500526[style=invis]
+		A1986482 -> P2500526
+		P2546070 [fillcolor="#cccccc" shape=point label="1"] //0.512335|-1.894438|-0.570566|0.448656|-1.307656|1.054217|0.520965|1.890959|-0.803943|0.614602|
+		I2546070 [shape=box style=invis label="12|0&2|6#2|7#1|0#1|4&#92;n11|5&0|10#0|8#1|6#1|7&#92;n4|4&2|8#0|0#2|7#2|6&#92;n12|0&0|5#0|4#1|4#1|9&#92;n"] 
+		P2546070 -> I2546070[style=invis]
+		A1986482 -> P2546070
+		P2497966 [fillcolor="#cccccc" shape=point label="1"] //-0.465690|-1.861849|0.357263|0.353071|-0.357262|-0.735662|0.154341|-0.171850|-0.717082|0.199817|
+		I2497966 [shape=box style=invis label="3|1&2|5#2|10#1|10#2|6&#92;n0|0&0|9#2|7#1|1#2|8&#92;n"] 
+		P2497966 -> I2497966[style=invis]
+		A1986482 -> P2497966
+}

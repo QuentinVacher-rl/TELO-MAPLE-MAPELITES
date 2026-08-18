@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-22 04:06:18
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1902131 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P2445815 [fillcolor="#cccccc" shape=point label="1"] //0.386036|0.557103|-0.249705|-0.529802|-0.356255|0.779665|0.259969|0.522522|-0.679249|0.983948|
+		I2445815 [shape=box style=invis label="11|0&2|11#2|7#1|1#1|6&#92;n"] 
+		P2445815 -> I2445815[style=invis]
+		A1902131 -> P2445815
+		P82187 [fillcolor="#cccccc" shape=point label="1"] //-0.665151|-0.394933|0.049888|0.862860|0.443114|-0.598118|-0.731836|0.438458|0.087230|0.938383|
+		I82187 [shape=box style=invis label="16|0&2|1#1|2#2|14#2|4&#92;n"] 
+		P82187 -> I82187[style=invis]
+		A1902131 -> P82187
+		P162788 [fillcolor="#cccccc" shape=point label="1"] //-0.784219|0.712448|-0.066251|0.179491|0.683895|-0.439636|-0.994552|0.520234|-0.523484|-0.875869|
+		I162788 [shape=box style=invis label="7|6&0|1#1|16#0|9#1|13&#92;n12|0&2|1#0|14#1|2#1|9&#92;n"] 
+		P162788 -> I162788[style=invis]
+		A1902131 -> P162788
+		P2249152 [fillcolor="#cccccc" shape=point label="1"] //1.065689|-0.743135|-0.731296|-0.332143|-0.222471|0.443716|-0.336572|-0.000639|0.934860|-0.229758|
+		I2249152 [shape=box style=invis label="1|0&2|1#2|1#1|12#0|1&#92;n"] 
+		P2249152 -> I2249152[style=invis]
+		A1902131 -> P2249152
+		P1008659 [fillcolor="#cccccc" shape=point label="1"] //-0.081543|-0.522498|-0.492113|-0.322173|-0.298711|0.667507|-0.866155|-0.170610|0.614397|0.634555|
+		I1008659 [shape=box style=invis label="1|5&2|7#2|10#2|3#0|10&#92;n6|0&0|13#0|0#1|14#0|2&#92;n"] 
+		P1008659 -> I1008659[style=invis]
+		A1902131 -> P1008659
+		P2859 [fillcolor="#cccccc" shape=point label="1"] //-0.144959|0.377046|-0.179031|0.958957|-0.463659|0.043426|-0.435291|0.894053|-0.592170|-0.447751|
+		I2859 [shape=box style=invis label=""] 
+		P2859 -> I2859[style=invis]
+		A1902131 -> P2859
+}

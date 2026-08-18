@@ -1,0 +1,32 @@
+// File exported with GEGELATI v2.0.0
+// On the 2025-11-21 22:12:07
+// With the File::TPGGraphDotExporter
+digraph{
+	graph[pad = "0.212, 0.055" bgcolor = lightgray]
+	node[shape=circle style = filled label = ""]
+		A1512852 [fillcolor="#ff3366" shape=box margin=0.03 width=0 height=0 label="0-1-2-3-4-5"]
+		P870208 [fillcolor="#cccccc" shape=point label="1"] //0.443184|-0.320851|0.850502|0.126661|-0.349767|0.669587|0.305964|-0.564747|-0.730064|-0.206568|
+		I870208 [shape=box style=invis label="4|0&0|16#2|9#2|13#0|13&#92;n14|0&2|1#0|16#1|11#0|8&#92;n"] 
+		P870208 -> I870208[style=invis]
+		A1512852 -> P870208
+		P1946809 [fillcolor="#cccccc" shape=point label="1"] //0.830180|0.981967|0.272772|0.421934|0.856935|0.724389|0.496672|-0.898207|0.001337|-0.929518|
+		I1946809 [shape=box style=invis label="10|0&2|7#2|3#1|15#2|0&#92;n"] 
+		P1946809 -> I1946809[style=invis]
+		A1512852 -> P1946809
+		P1946808 [fillcolor="#cccccc" shape=point label="1"] //0.074162|-0.933679|-0.870426|0.633799|0.591499|-0.002159|-0.205041|-0.694573|-0.026669|0.126724|
+		I1946808 [shape=box style=invis label="5|0&2|7#0|8#2|0#2|7&#92;n"] 
+		P1946808 -> I1946808[style=invis]
+		A1512852 -> P1946808
+		P870207 [fillcolor="#cccccc" shape=point label="1"] //0.803390|0.964377|0.210660|-0.173472|-0.415278|0.188599|0.406065|0.471388|0.725653|-0.650591|
+		I870207 [shape=box style=invis label="3|0&2|13#2|9#0|10#0|11&#92;n"] 
+		P870207 -> I870207[style=invis]
+		A1512852 -> P870207
+		P473635 [fillcolor="#cccccc" shape=point label="1"] //-0.482307|-0.514426|-0.546661|-0.304304|-0.885383|-0.502285|-0.213300|0.187408|-0.022967|-0.716825|
+		I473635 [shape=box style=invis label="14|0&2|1#0|14#1|1#1|10&#92;n"] 
+		P473635 -> I473635[style=invis]
+		A1512852 -> P473635
+		P62526 [fillcolor="#cccccc" shape=point label="1"] //0.543530|-0.811868|-0.871368|0.078141|0.694870|0.281814|0.822565|0.158419|0.690862|-0.701611|
+		I62526 [shape=box style=invis label="17|0&2|0#1|14#2|1#1|7&#92;n"] 
+		P62526 -> I62526[style=invis]
+		A1512852 -> P62526
+}
